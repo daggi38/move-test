@@ -18,7 +18,7 @@ const Header = () => {
         <div className="hidden md:flex lg:flex-grow lg:justify-center">
           <div className="text-light-grey font-raleway text-xl lg:text-2xl flex gap-6 lg:gap-10 font-light">
             <Link to="/fitness">{fitnessLink}</Link>
-            <Link to="/">{entertainmentLink}</Link>
+            <Link to="/entertaiment">{entertainmentLink}</Link>
           </div>
         </div>
 
