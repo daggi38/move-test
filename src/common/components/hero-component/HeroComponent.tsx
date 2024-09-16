@@ -17,7 +17,7 @@ const HeroComponent: React.FC<HeroComponentProps> = ({
         <img
           src={imagePath}
           alt="image of a gym"
-          className="w-full h-full object-cover rounded-none md:rounded-2xl"
+          className="w-full h-full object-cover "
         />
 
         <div className="absolute inset-0 bg-gradient-to-r from-primary  to-transparent opacity-70 via-primary"></div>
@@ -25,7 +25,7 @@ const HeroComponent: React.FC<HeroComponentProps> = ({
           <p className="text-3xl md:text-5xl lg:text-6xl mb-4 font-Montserrat font-bold text-light-yellow w-1/2">
             {title}
           </p>
-          <p className="text-4xl text-light-grey  font-medium font-raleway font-normal">
+          <p className="text-4xl text-light-grey   font-raleway font-normal">
             {description}
           </p>
         </div>

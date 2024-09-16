@@ -11,6 +11,7 @@ const FitnessPage = () => {
       <Header />
       <FitnessHero />
       <HeroDescription
+      isDetailPage={true}
         descriptionOne="Welcome to MoveIt Fitness, where every workout is an adventure and every step brings you closer to your fitness goals! Whether you're just starting your fitness journey or you're a seasoned pro, MoveIt Fitness offers a diverse range of workout videos designed to keep you motivated, energized, and excited to move"
         title="Fitness"
         descriptionTwo="From heart-pumping cardio sessions to muscle-building strength training, high-intensity interval workouts to calming yoga flows, we have something for everyone. Our expert instructors guide you through each routine with enthusiasm and expertise, ensuring that you not only achieve your fitness goals but also have a blast doing it"
