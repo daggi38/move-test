@@ -1,15 +1,18 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 interface HeroComponentProps {
   imagePath: string;
   title: string;
   description: string;
+  isThankyouPage?: boolean;
 }
 
 const HeroComponent: React.FC<HeroComponentProps> = ({
   imagePath,
   title,
   description,
+  isThankyouPage = false,
 }) => {
   return (
     <div className="flex flex-col items-center justify-between">
@@ -28,6 +31,17 @@ const HeroComponent: React.FC<HeroComponentProps> = ({
           <p className="text-4xl text-light-grey   font-raleway font-normal">
             {description}
           </p>
+          {isThankyouPage ? (
+            <div className=" p-3 mt-5 bg-gradient-to-r from-light-yellow to-dark-yellow  flex items-center justify-center rounded-full">
+              {" "}
+              <Link to="/">
+                {" "}
+                <p className="text-white  px-5">Back To Home</p>
+              </Link>
+            </div>
+          ) : (
+            ""
+          )}
         </div>
       </div>
     </div>

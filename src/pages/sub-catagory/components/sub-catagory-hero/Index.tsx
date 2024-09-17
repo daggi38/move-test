@@ -2,14 +2,14 @@ import React from "react";
 import HeroComponent from "../../../../common/components/hero-component/HeroComponent";
 import TradeMill from "../../../../assets/images/fitness-cardio.jpg";
 
-const FitnessDetailHero = () => {
+const SubCatagoryHero = () => {
   return (
     <HeroComponent
-      title=" Cardiovascular Training"
-      description="Unleash Your Potential: Fitness Starts Here!"
+      title=" title here"
+      description="subtitle here!"
       imagePath={TradeMill}
     />
   );
 };
 
-export default FitnessDetailHero;
+export default SubCatagoryHero;

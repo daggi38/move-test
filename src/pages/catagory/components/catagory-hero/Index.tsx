@@ -2,14 +2,14 @@ import React from 'react'
 import HeroComponent from '../../../../common/components/hero-component/HeroComponent'
 import HeroImage from "../../../../assets/images/hero-image.jpg"
 
-const EntertainmentHero = () => {
+const CatagoryHero = () => {
   return (
     <HeroComponent
-    title={"Escape the Ordinary: Entertain Yourself with MoveIt"}
-    description="Binge-Worthy Content: Your Entertainment Awaits!"
+    title={"title here"}
+    description="subtitle here!"
     imagePath={HeroImage}
   />
   )
 }
 
-export default EntertainmentHero
+export default CatagoryHero
