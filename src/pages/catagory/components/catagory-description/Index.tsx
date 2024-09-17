@@ -1,9 +1,9 @@
 import HeroDescription from "../../../../common/components/hero-component/HeroDescription";
 
-const CatagoryDescription = () => {
+const CategoryDescription = () => {
   return (
     <HeroDescription
-    isCatagoryPage={true}
+    isCategoryPage={true}
       descriptionOne="description here"
       title="description title here"
       descriptionTwo=""
@@ -11,4 +11,4 @@ const CatagoryDescription = () => {
   );
 };
 
-export default CatagoryDescription;
+export default CategoryDescription;

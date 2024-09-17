@@ -1,19 +1,20 @@
 import Footer from "../../common/components/footer/Footer";
 import Header from "../../common/components/header/Header";
-import CatagoryDescription from "./components/catagory-description/Index";
-import CatagoryHero from "./components/catagory-hero/Index";
-import CatagorySection from "./components/catagory-section/Index";
+import CategoryDescription from "./components/catagory-description/Index";
+import CategoryHero from "./components/catagory-hero/Index";
+import CategorySection from "./components/catagory-section/Index";
 
-const Catagory = () => {
+
+const Category = () => {
   return (
     <div className="relative bg-gradient-to-r from-primary to-primary-light min-h-screen min-w-screen max-w-screen">
       <Header />
-      <CatagoryHero />
-      <CatagoryDescription />
-      <CatagorySection sectionTitle={"sectiontitle here"} />
+      <CategoryHero />
+      <CategoryDescription />
+      <CategorySection sectionTitle={"sectiontitle here"} />
       <Footer />
     </div>
   );
 };
 
-export default Catagory;
+export default Category;

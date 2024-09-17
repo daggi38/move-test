@@ -4,8 +4,9 @@ import Main from "../../pages/main/Index";
 
 
 import ThankYou from "../../pages/thank-you/Index";
-import Catagory from "../../pages/catagory/Index";
-import Subcatagory from "../../pages/sub-catagory/Index";
+import Subcategory from "../../pages/sub-catagory/Index";
+import Category from "../../pages/catagory/Index";
+
 
 export const router = createBrowserRouter([
   {
@@ -17,13 +18,13 @@ export const router = createBrowserRouter([
       },
     
       {
-        path: "/catagory",
-        element: <Catagory />,
+        path: "/category",
+        element: <Category />,
       },
     
       {
-        path: "/subcatagory",
-        element: <Subcatagory />,
+        path: "/subcategory",
+        element: <Subcategory />,
       },
       {
         path: "/thank-you",

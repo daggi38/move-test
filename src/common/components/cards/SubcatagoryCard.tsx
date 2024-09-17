@@ -1,12 +1,12 @@
 import React from "react";
 
-type SubcatagoryCardProps = {
+type SubcategoryCardProps = {
   title: string;
   description: string;
   image: string;
 };
 
-const SubcatagoryCard: React.FC<SubcatagoryCardProps> = ({ title, description, image }) => {
+const SubcategoryCard: React.FC<SubcategoryCardProps> = ({ title, description, image }) => {
   return (
     <div className="bg-primary w-[395px] rounded-2xl">
       <div className="flex flex-col items-center justify-center">
@@ -22,4 +22,4 @@ const SubcatagoryCard: React.FC<SubcatagoryCardProps> = ({ title, description, i
   );
 };
 
-export default SubcatagoryCard;
+export default SubcategoryCard;

@@ -1,14 +1,14 @@
 import React from "react";
 import HeroDescription from "../../../../common/components/hero-component/HeroDescription";
 
-const SubCatagoryDescription = () => {
+const SubCategoryDescription = () => {
   return (
     <HeroDescription
-      isCatagoryPage={false}
+      isCategoryPage={false}
       title="description title"
       descriptionOne="description"
     />
   );
 };
 
-export default SubCatagoryDescription;
+export default SubCategoryDescription;

@@ -8,7 +8,7 @@ interface HeroDescriptionProps {
   descriptionOne: string;
   descriptionTwo?: string;
   descriptionThree?: string;
-  isCatagoryPage?: boolean;
+  isCategoryPage?: boolean;
 }
 
 const HeroDescription: React.FC<HeroDescriptionProps> = ({
@@ -16,13 +16,13 @@ const HeroDescription: React.FC<HeroDescriptionProps> = ({
   descriptionOne,
   descriptionTwo,
   descriptionThree,
-  isCatagoryPage = false,
+  isCategoryPage = false,
 }) => {
   return (
     <div className="relative grid grid-cols-[2fr_1fr_2fr] -mt-16">
       <div className="bg-primary rounded-t-3xl flex items-center justify-center px-20 py-10">
         <div className="text-light-grey font-raleway flex flex-row items-center gap-3 h-[40vh]">
-          {isCatagoryPage ? (
+          {isCategoryPage ? (
             <MoveItText className="text-3xl sm:text-5xl font-raleway font-light" />
           ) : (
             ""

@@ -1,8 +1,8 @@
 import React from "react";
-import EntertainmentCard from "../../../../common/components/cards/SubcatagoryCard";
 import LiveArt from "../../../../assets/images/live-art.jpg";
 import { useNavigate } from "react-router";
-import SubcatagoryCard from "../../../../common/components/cards/SubcatagoryCard";
+import SubcategoryCard from "../../../../common/components/cards/SubcatagoryCard";
+
 
 type CategorySectionProps = {
   sectionTitle: string;
@@ -19,7 +19,7 @@ const CategorySection: React.FC<CategorySectionProps> = ({ sectionTitle }) => {
 
       <div className="flex gap-5 mt-10">
        
-       <SubcatagoryCard description="" image="" title=""/>
+       <SubcategoryCard description="" image="" title=""/>
       </div>
     </div>
   );
