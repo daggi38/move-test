@@ -1,11 +1,12 @@
 import { createBrowserRouter } from "react-router-dom";
 import Layout from "../../pages/Layout";
 import Main from "../../pages/main/Index";
-import FitnessPage from "../../pages/fitness/Index";
-import EntertainmentPage from "../../pages/entertaiment/Index";
-import EntertainmentDetail from "../../pages/entertainment-detail/Index";
-import FitnessDetail from "../../pages/fitness-detail/Index";
+
+
 import ThankYou from "../../pages/thank-you/Index";
+import Subcategory from "../../pages/sub-catagory/Index";
+import Category from "../../pages/catagory/Index";
+
 
 export const router = createBrowserRouter([
   {
@@ -15,21 +16,15 @@ export const router = createBrowserRouter([
         path: "/",
         element: <Main />,
       },
+    
       {
-        path: "/fitness",
-        element: <FitnessPage />,
+        path: "/category",
+        element: <Category />,
       },
+    
       {
-        path: "/entertaiment",
-        element: <EntertainmentPage />,
-      },
-      {
-        path: "/entertainment-detail",
-        element: <EntertainmentDetail />,
-      },
-      {
-        path: "/fitness-detail",
-        element: <FitnessDetail />,
+        path: "/subcategory",
+        element: <Subcategory />,
       },
       {
         path: "/thank-you",
