@@ -7,7 +7,7 @@ const About = () => {
       {/* First Section */}
       <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-10">
         <div className="text-light-grey text-center md:text-left">
-          <p className="text-[32px] md:text-[48px] font-Montserrat">
+          <p className="text-[32px] lg:text-[48px] font-Montserrat">
             <p>Get Moving. Get Fit.</p>
             <p> Get Strong</p>
           </p>
@@ -27,7 +27,7 @@ const About = () => {
       {/* Second Section */}
       <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-10 mt-20">
         <div className="text-light-grey text-center md:text-left">
-          <p className="text-[32px] md:text-[48px] font-Montserrat">
+          <p className="text-[32px] lg:text-[48px] font-Montserrat">
             <p>Step Up, Shine,</p>
             <p>Entertain, and Compete</p>
           </p>

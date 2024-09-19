@@ -25,10 +25,10 @@ const HeroComponent: React.FC<HeroComponentProps> = ({
 
         <div className="absolute inset-0 bg-gradient-to-r from-primary  to-transparent opacity-70 via-primary"></div>
         <div className="absolute inset-0 flex flex-col items-center justify-center text-center ">
-          <p className="text-3xl md:text-5xl lg:text-6xl mb-4 font-Montserrat font-bold text-light-yellow w-1/2">
+          <p className="text-4xl md:text-5xl lg:text-6xl mb-4 font-Montserrat font-bold text-light-yellow w-full lg:w-1/2">
             {title}
           </p>
-          <p className="text-4xl text-light-grey   font-raleway font-normal">
+          <p className="text-2xl md:text-3xl text-light-grey   font-raleway font-normal">
             {description}
           </p>
           {isThankyouPage ? (

@@ -10,7 +10,7 @@ interface VideoCardProps {
 
 const VideoCard: React.FC<VideoCardProps> = ({ title, views, description, image }) => {
   return (
-    <div className="w-[400px] h-[394px] bg-primary rounded-lg">
+    <div className=" w-full md:w-[400px] h-[394px] bg-primary rounded-lg">
       <div>
         <img src={image} alt={title} className="h-[200px] w-full rounded-lg object-cover" />
       </div>

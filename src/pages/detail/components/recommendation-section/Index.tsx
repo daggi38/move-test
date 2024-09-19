@@ -3,8 +3,8 @@ import VideoCard from "../../../../common/components/cards/VideoCard";
 
 const RecommendationSection = () => {
   return (
-    <div className="px-20">
-      <p className="text-light-yellow text-5xl font-light font-Montserrat">
+    <div className="px-5 md:px-20">
+      <p className="font-Montserrat text-3xl md:text-6xl text-light-yellow">
         {"Recommendation"}
       </p>
       <div className="h-[50vh ]">
