@@ -47,10 +47,10 @@ const Header = () => {
       {isMenuOpen && (
         <div className="md:hidden mt-4">
           <div className="text-light-grey font-raleway text-xl flex flex-col gap-4 font-light">
-            <Link to="/" onClick={() => setIsMenuOpen(false)}>
+            <Link to="/catagory" onClick={() => setIsMenuOpen(false)}>
               {fitnessLink}
             </Link>
-            <Link to="/" onClick={() => setIsMenuOpen(false)}>
+            <Link to="/category" onClick={() => setIsMenuOpen(false)}>
               {entertainmentLink}
             </Link>
           </div>

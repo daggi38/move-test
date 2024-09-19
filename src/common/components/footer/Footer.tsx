@@ -14,8 +14,8 @@ const Footer = () => {
           <span className="text-light-grey">It</span>
         </div>
         <div className="text-light-grey font-raleway text-xl sm:text-2xl flex flex-col md:flex-row gap-4 md:gap-10 font-light items-center">
-          <Link to="/fitness">{fitnessLink}</Link>
-          <Link to="/entertaiment">{entertainmentLink}</Link>
+          <Link to="/category">{fitnessLink}</Link>
+          <Link to="/category">{entertainmentLink}</Link>
         </div>
         <div className="flex flex-col items-center md:items-end gap-4">
           <div className="flex gap-5 text-white">

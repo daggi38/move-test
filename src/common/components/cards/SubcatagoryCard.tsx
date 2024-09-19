@@ -8,7 +8,7 @@ type SubcategoryCardProps = {
 
 const SubcategoryCard: React.FC<SubcategoryCardProps> = ({ title, description, image }) => {
   return (
-    <div className="bg-primary w-[395px] rounded-2xl">
+    <div className="bg-primary  w-full md:w-[395px] rounded-2xl">
       <div className="flex flex-col items-center justify-center">
         <p className="text-light-yellow text-4xl font-normal p-5 text-center font-Montserrat">
           {title}

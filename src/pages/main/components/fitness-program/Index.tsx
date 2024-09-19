@@ -4,9 +4,9 @@ import FitnessProgramCard from "../../../../common/components/cards/FitnessProgr
 
 const FitnessProgram = () => {
   return (
-    <div className="bg-primary px-5 md:px-20">
+    <div className="bg-primary px-5 lg:px-20">
       {/* Header Section */}
-      <div className="flex flex-col md:flex-row items-center justify-between py-10 md:py-20 gap-5">
+      <div className="flex flex-col lg:flex-row items-center justify-between py-10 md:py-20 gap-5">
         <div className="text-center md:text-left">
           <p className="font-Montserrat text-4xl md:text-6xl text-light-yellow">
             Fitness Program
@@ -34,7 +34,7 @@ const FitnessProgram = () => {
       {/* Fitness Program Cards */}
       <div className="flex flex-col md:flex-row justify-around gap-10 pb-10">
         <FitnessProgramCard
-          description="We help you build muscle with expert-guided strength training programs designed for all levels. Our trainers provide personalized workouts and nutrition tips to ensure you gain muscle safely and effectively. Begin your path to a stronger, fitter version of yourself now!"
+          description="We help you build muscle with expert-guided strength training programs designed for all levels. Our trainers provide personalized workouts and nutrition tips to ensure you gain muscle safely and effectively. !"
           title="Muscle gain"
         />
         <FitnessProgramCard
@@ -47,7 +47,7 @@ const FitnessProgram = () => {
         />
       </div>
 
-      {/* View All Programs */}
+
       <p className="text-light-yellow font-raleway text-lg md:text-xl text-center font-light pb-10">
         View all fitness programs
       </p>

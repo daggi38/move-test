@@ -15,8 +15,8 @@ const Main = () => {
       <LandingHero />
       <HomeHeroDescription />
       <About />
-      <FitnessProgram />
-      <GetEntertained />
+        <FitnessProgram />
+         <GetEntertained />  
       <Footer />
     </div>
   );
