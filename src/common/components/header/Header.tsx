@@ -1,10 +1,13 @@
-import  { useState } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
-import { entertainmentLink, fitnessLink } from "../../app-strings";
 import MoveItText from "../../helper/TitleHelper";
+import UseFetchCategories from "../../../hooks/use-fetch-categories";
+import UseFetchSingleCategories from "../../../hooks/use-fetch-single-category";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { categories } = UseFetchCategories();
+  const { category } = UseFetchSingleCategories();
 
   return (
     <div className="py-5 px-4 sm:px-6 md:px-8 lg:px-20">
@@ -17,8 +20,16 @@ const Header = () => {
 
         <div className="hidden md:flex lg:flex-grow lg:justify-center">
           <div className="text-light-grey font-raleway text-xl lg:text-2xl flex gap-6 lg:gap-10 font-light">
-            <Link to="/category">{fitnessLink}</Link>
-            <Link to="/category">{entertainmentLink}</Link>
+            {categories?.map((category) => (
+              <Link
+                key={category.id}
+                to="/category"
+                state={{ id: category.id }}
+                onClick={() => console.log(category.id)}
+              >
+                {category.title}
+              </Link>
+            ))}
           </div>
         </div>
 
@@ -47,12 +58,16 @@ const Header = () => {
       {isMenuOpen && (
         <div className="md:hidden mt-4">
           <div className="text-light-grey font-raleway text-xl flex flex-col gap-4 font-light">
-            <Link to="/catagory" onClick={() => setIsMenuOpen(false)}>
-              {fitnessLink}
-            </Link>
-            <Link to="/category" onClick={() => setIsMenuOpen(false)}>
-              {entertainmentLink}
-            </Link>
+            {categories?.map((category) => (
+              <Link
+                key={category.id}
+                to="/category"
+                state={{ category }}
+                onClick={() => setIsMenuOpen(false)}
+              >
+                {category.title}
+              </Link>
+            ))}
           </div>
         </div>
       )}
