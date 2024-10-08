@@ -3,10 +3,23 @@ import { AiFillTwitterCircle } from "react-icons/ai";
 import { FaFacebook, FaPhoneAlt } from "react-icons/fa";
 import { MdLocationPin } from "react-icons/md";
 import { RiArrowRightWideFill } from "react-icons/ri";
-import UseFetchCategories from "../../../hooks/use-fetch-categories";
+import useFetchCategories from "../../../hooks/use-fetch-categories";
 
 const Footer = () => {
-  const { categories } = UseFetchCategories();
+  const { categories } = useFetchCategories();
+
+ 
+  const categoryLinks = categories?.map((category) => (
+    <Link
+      key={category.id}
+      to="/category"
+      state={{ id: category.id }}
+      onClick={() => {}}
+    >
+      {category.title}
+    </Link>
+  ));
+
   return (
     <div className="bg-primary px-4 sm:px-6 md:px-8 lg:px-20">
       <div className="flex flex-col md:flex-row justify-between pt-8 gap-8">
@@ -15,17 +28,8 @@ const Footer = () => {
           <span className="text-light-grey">It</span>
         </div>
         <div className="text-light-grey font-raleway text-xl lg:text-2xl flex gap-6 lg:gap-10 font-light">
-            {categories?.map((category) => (
-              <Link
-                key={category.id}
-                to="/category"
-                state={{ id: category.id }}
-                onClick={() => console.log(category.id)}
-              >
-                {category.title}
-              </Link>
-            ))}
-          </div>
+          {categoryLinks}
+        </div>
         <div className="flex flex-col items-center md:items-end gap-4">
           <div className="flex gap-5 text-white">
             <AiFillTwitterCircle size={32} />

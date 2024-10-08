@@ -4,7 +4,7 @@ import { useEffect } from "react";
 import { useFeaturedCollectionStore } from "../setup/state-store/featured-collection/store";
 import { getFeaturedCollectionEndpoint } from "../setup/axios-setup/endpoints";
 
-const UseFetchFeaturedCollection = () => {
+const useFetchFeaturedCollection = () => {
   const {
     featuredCollection,
     isBusy,
@@ -37,4 +37,4 @@ const UseFetchFeaturedCollection = () => {
   return { isBusy, featuredCollection };
 };
 
-export default UseFetchFeaturedCollection;
+export default useFetchFeaturedCollection;

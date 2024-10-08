@@ -4,7 +4,7 @@ import { useEffect } from "react";
 import { getCategoriesEndpoint,  } from "../setup/axios-setup/endpoints";
 import { useCategoriesStore } from "../setup/state-store/categories/store";
 
-const UseFetchCategories = () => {
+const useFetchCategories = () => {
   const {
     entertainmentCategory,
     fitnessCategory,
@@ -41,4 +41,4 @@ const UseFetchCategories = () => {
   return {categories  , isBusy , fitnessCategory,entertainmentCategory};
 };
 
-export default UseFetchCategories;
+export default useFetchCategories;

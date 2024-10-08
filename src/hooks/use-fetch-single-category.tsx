@@ -5,7 +5,7 @@ import { getCategoriesEndpoint } from "../setup/axios-setup/endpoints";
 import { useCategoriesStore } from "../setup/state-store/categories/store";
 import { useSIngleCategoryStore } from "../setup/state-store/single-category/store";
 
-const UseFetchSingleCategories = () => {
+const useFetchSingleCategories = () => {
   const {
    category,
     isBusy,
@@ -38,4 +38,4 @@ const UseFetchSingleCategories = () => {
   return { category, isBusy, };
 };
 
-export default UseFetchSingleCategories;
+export default useFetchSingleCategories;
