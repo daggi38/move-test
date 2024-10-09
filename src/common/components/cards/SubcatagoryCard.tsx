@@ -10,10 +10,10 @@ const SubcategoryCard: React.FC<SubcategoryCardProps> = ({ title, description, i
   return (
     <div className="bg-primary  w-full md:w-[395px] rounded-2xl">
       <div className="flex flex-col items-center justify-center">
-        <p className="text-light-yellow text-4xl font-normal p-5 text-center font-Montserrat">
+        <p className="text-light-yellow text-3xl font-normal p-5 pt-7 text-center font-Montserrat">
           {title}
         </p>
-        <p className="text-light-grey text-base text-center font-raleway">
+        <p className="text-light-grey text-base text-center font-raleway pt-2 px-5">
           {description}
         </p>
         <img src={image} alt={title} className="w-[340px] h-[244px] p-5 rounded-[50px]" />

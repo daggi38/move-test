@@ -2,40 +2,50 @@ import { instanceWithOutCredential } from "../setup/axios-setup/endpoint-setup";
 import { useEffect } from "react";
 
 import { getCategoriesEndpoint } from "../setup/axios-setup/endpoints";
-import { useCategoriesStore } from "../setup/state-store/categories/store";
 import { useSIngleCategoryStore } from "../setup/state-store/single-category/store";
 
-const useFetchSingleCategories = () => {
+const useFetchSingleCategories = (id:string) => {
   const {
-   category,
+    category,
     isBusy,
     setCategoriesAfterFetch,
-
     setIsBusy,
-    isDataFetched,
+   
+    subCategory,
+    setSubCategoriesAfterFetch
+
+    
   } = useSIngleCategoryStore();
 
   useEffect(() => {
-    if (!isDataFetched) {
-      fetchCategories();
+    if (id) {
+      fetchCategory(id);
     }
-  }, [isDataFetched]);
+  }, [id]);
 
-  async function fetchCategories() {
+  async function fetchCategory(categoryId:string) {
     try {
       setIsBusy(true);
       const response = await instanceWithOutCredential.get(
-        `${getCategoriesEndpoint}/${"5f86ccc2-847e-11ef-8099-dc996942118f"}`
+        `${getCategoriesEndpoint}/${categoryId}`
+
+      
       );
 
-      setCategoriesAfterFetch(response.data.data);
+      setCategoriesAfterFetch(response.data.data); 
+      
+     
+      setSubCategoriesAfterFetch(response.data.sub_categories)
+
+    
     } catch (error) {
+      console.error("Error fetching category:", error);
     } finally {
       setIsBusy(false);
     }
   }
 
-  return { category, isBusy, };
+  return { category, isBusy,subCategory };
 };
 
 export default useFetchSingleCategories;

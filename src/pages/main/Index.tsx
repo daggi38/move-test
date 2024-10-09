@@ -10,7 +10,7 @@ import GetEntertained from "./components/get-entertained/Index";
 import LandingHero from "./components/landing-hero/Index";
 
 const Main = () => {
-  const {featuredCollection,isBusy}=useFetchFeaturedCollection()
+
   return (
     <div className="relative bg-gradient-to-r from-primary to-primary-light min-h-screen min-w-screen max-w-screen">
       <Header />

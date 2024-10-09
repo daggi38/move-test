@@ -10,14 +10,13 @@ const Header = () => {
 
  
   const categoryLinks = categories?.map((category) => (
-    <Link
-      key={category.id}
-      to="/category"
-      state={{ id: category.id }}
-      onClick={() => setIsMenuOpen(false)}
-    >
-      {category.title}
-    </Link>
+<Link
+  key={category.id}
+  to={`/category/${category.id}`}  
+  onClick={() => setIsMenuOpen(false)}
+>
+  {category.title}
+</Link>
   ));
 
   return (

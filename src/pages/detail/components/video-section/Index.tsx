@@ -1,12 +1,13 @@
 import React from "react";
 import ReactPlayer from "react-player";
+import meet from "../../../../assets/images/meet.mp4"
 
 const VideoSection = () => {
   return (
     <div className="  px-5 md:px-20">
      <div className="h-[50vh]">
      <ReactPlayer
-        url={"https://github.com/intel-iot-devkit/sample-videos/raw/master/car-detection.mp4"}
+        url={meet}
         width="100%"
         height="100%"
         controls={true}

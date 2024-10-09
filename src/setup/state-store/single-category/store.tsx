@@ -1,23 +1,28 @@
 import { create } from "zustand";
-import { Categories } from "../../../models/categories/categories";
+import { Categories, SubCategory } from "../../../models/categories/categories";
 
 type SingleCategoryStore = {
   category: Categories;
+  subCategory:SubCategory[];
  
   isBusy: boolean;
   isDataFetched: boolean;
   setCategoriesAfterFetch: (data: Categories) => void;
+  setSubCategoriesAfterFetch: (data: SubCategory[]) => void;
   setIsBusy: (busy: boolean) => void;
 };
 
 export const useSIngleCategoryStore = create<SingleCategoryStore>((set) => ({
+  subCategory:[],
+
   category: {
-      id: "",
-      title: "",
-      short_des: "",
-      page_title: "",
-      page_sub_title: "",
-      description: ""
+    id: "",
+    title: "",
+    short_desc: "",
+    page_title: "",
+    page_sub_title: "",
+    description: "",
+    sub_categories: []
   },
 
   isBusy: false,
@@ -32,6 +37,15 @@ export const useSIngleCategoryStore = create<SingleCategoryStore>((set) => ({
 
     set(() => ({
       category: data,
+     
+      isDataFetched: true,
+    }));
+  },
+  setSubCategoriesAfterFetch: (data: SubCategory[]) => {
+
+
+    set(() => ({
+      subCategory: data,
      
       isDataFetched: true,
     }));
