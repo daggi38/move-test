@@ -2,7 +2,6 @@ import React from "react";
 import SearchBar from "../search-bar/SearchBar";
 import MoveItText from "../../helper/TitleHelper";
 
-// Define the props interface with optional descriptions
 interface HeroDescriptionProps {
   title: string;
   descriptionOne: string;
@@ -27,7 +26,7 @@ const HeroDescription: React.FC<HeroDescriptionProps> = ({
       </div>
 
       <div className="bg-primary rounded-none md:rounded-tr-3xl flex items-center justify-center px-5 sm:px-10 md:px-20 py-10">
-        <div className="text-light-grey font-raleway flex flex-row items-center gap-3 h-auto md:h-[40vh]">
+        <div className="text-light-grey font-raleway flex flex-row items-center gap-3 h-auto lg:h-[40vh]">
           {isCategoryPage ? (
             <MoveItText className="text-2xl sm:text-3xl md:text-5xl font-raleway font-light" />
           ) : (
