@@ -1,8 +1,7 @@
 import Footer from "../../common/components/footer/Footer";
 import Header from "../../common/components/header/Header";
 import HomeHeroDescription from "../../common/components/hero-component/HomeHeroDescription";
-import useFetchFeaturedCollection from "../../hooks/use-fetch-featured-collection";
-import UseFetchFeaturedCollection from "../../hooks/use-fetch-featured-collection";
+
 import About from "./components/about-moveit/Index";
 
 import FitnessProgram from "./components/fitness-program/Index";

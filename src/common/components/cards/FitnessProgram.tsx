@@ -14,7 +14,7 @@ const FitnessProgramCard: React.FC<FitnessProgramCardProps> = ({
       <p className=" mt-4 font-Montserrat text-center text-light-yellow text-2xl lg:text-4xl w-full ">
         {title}
       </p>
-      <p className="mt-2 px-2 font-raleway text-sm lg:text-lg  text-center text-light-grey font-light text-wrap">
+      <p className="mt-2 px-2 font-raleway text-sm lg:text-base  text-center text-light-grey font-light text-wrap">
         <span>At </span>
         <span className="text-light-yellow">Move</span>
         <span>It </span>

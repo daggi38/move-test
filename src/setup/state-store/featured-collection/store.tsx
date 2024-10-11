@@ -3,7 +3,8 @@ import { FeaturedCollection } from "../../../models/featured-collection/featured
 
 type FeaturedCollectionStore = {
   featuredCollection: FeaturedCollection[];
- 
+  fitnessFeature: FeaturedCollection;
+  entertainmentFeature: FeaturedCollection;
   isBusy: boolean;
   isDataFetched: boolean;
   setFeaturedCollection: (data: FeaturedCollection[]) => void;
@@ -11,7 +12,21 @@ type FeaturedCollectionStore = {
 };
 
 export const useFeaturedCollectionStore = create<FeaturedCollectionStore>((set) => ({
- featuredCollection:[],
+  featuredCollection: [],
+  fitnessFeature: {
+    id: "",
+    title: "",
+    description: "",
+    position: "",
+    category: [],  
+  },
+  entertainmentFeature: {
+    id: "",
+    title: "",
+    description: "",
+    position: "",
+    category: [],  
+  },
 
   isBusy: false,
   isDataFetched: false,
@@ -22,10 +37,26 @@ export const useFeaturedCollectionStore = create<FeaturedCollectionStore>((set) 
 
   setFeaturedCollection: (data: FeaturedCollection[]) => {
 
+    const fitnessFeature = data.find((item) => item.title === "Fitness Program") || {
+      id: "",
+      title: "",
+      description: "",
+      position: "",
+      category: [],  
+    };
+
+    const entertainmentFeature = data.find((item) => item.title === "Get Entertained") || {
+      id: "",
+      title: "",
+      description: "",
+      position: "",
+      category: [],  
+    };
 
     set(() => ({
       featuredCollection: data,
-     
+      fitnessFeature,
+      entertainmentFeature,
       isDataFetched: true,
     }));
   },

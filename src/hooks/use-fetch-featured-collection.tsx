@@ -6,6 +6,8 @@ import { getFeaturedCollectionEndpoint } from "../setup/axios-setup/endpoints";
 
 const useFetchFeaturedCollection = () => {
   const {
+    entertainmentFeature,
+    fitnessFeature,
     featuredCollection,
     isBusy,
     setFeaturedCollection,
@@ -34,7 +36,7 @@ const useFetchFeaturedCollection = () => {
     }
   }
 
-  return { isBusy, featuredCollection };
+  return { isBusy, featuredCollection ,fitnessFeature,entertainmentFeature,isDataFetched};
 };
 
 export default useFetchFeaturedCollection;
