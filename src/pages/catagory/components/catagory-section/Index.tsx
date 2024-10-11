@@ -27,7 +27,7 @@ const CategorySection: React.FC<CategoryProps> = ({
         {category.title}
       </h2>
 
-      {/* <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8">
+       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8">
         {isLoading ? (
           <>
             <ShimmerIndicator count={1} height={400} width={400} />
@@ -43,7 +43,7 @@ const CategorySection: React.FC<CategoryProps> = ({
             />
           ))
         )}
-      </div> */}
+      </div> 
     </div>
   );
 };

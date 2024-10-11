@@ -5,11 +5,13 @@ import { Categories } from "../../../../models/categories/categories";
 
 interface CategoryProps {
   category: Categories;
+  isLoading:boolean
 }
 
-const CategoryHero: React.FC<CategoryProps> = ({ category }) => {
+const CategoryHero: React.FC<CategoryProps> = ({ category ,isLoading}) => {
   return (
     <HeroComponent
+    
       title={category.page_title}
       description={category.page_sub_title}
       imagePath={HeroImage}

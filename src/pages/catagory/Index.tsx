@@ -5,7 +5,6 @@ import CategoryDescription from "./components/catagory-description/Index";
 import CategoryHero from "./components/catagory-hero/Index";
 import CategorySection from "./components/catagory-section/Index";
 import useFetchSingleCategories from "../../hooks/use-fetch-single-category";
-import useFetchDashboardStats from "../../hooks/use-fetch-dashboard-stat";
 
 const Category = () => {
   const { id } = useParams<{ id?: string }>();
@@ -18,8 +17,8 @@ const Category = () => {
   return (
     <div className="relative bg-gradient-to-r from-primary to-primary-light min-h-screen min-w-screen max-w-screen">
       <Header />
-      <CategoryHero category={category} />
-      <CategoryDescription category={category} />
+      <CategoryHero category={category} isLoading={isBusy}/>
+      <CategoryDescription category={category}  />
       <CategorySection category={category} subCategory={subCategory} isLoading={isBusy} />
       <Footer />
     </div>
