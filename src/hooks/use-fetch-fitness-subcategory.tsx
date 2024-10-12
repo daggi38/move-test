@@ -2,18 +2,17 @@ import { instanceWithOutCredential } from "../setup/axios-setup/endpoint-setup";
 import { useEffect } from "react";
 
 import { getCategoriesEndpoint } from "../setup/axios-setup/endpoints";
-import { useSIngleCategoryStore } from "../setup/state-store/single-category/store";
+import { useFitnessSubcategoryStore } from "../setup/state-store/sub-category/fitness-sub-category";
 
-const useFetchSingleCategories = (id: string) => {
+const useFetchFitnessSubCategories = (id: string) => {
   const {
-    category,
     isBusy,
-    setCategoriesAfterFetch,
     setIsBusy,
-
-    subCategory,
+fitnessSubCategory,
+isDataFetched,
+   
     setSubCategoriesAfterFetch,
-  } = useSIngleCategoryStore();
+  } = useFitnessSubcategoryStore();
 
   useEffect(() => {
     if (id) {
@@ -28,7 +27,6 @@ const useFetchSingleCategories = (id: string) => {
         `${getCategoriesEndpoint}/${categoryId}`
       );
 
-      setCategoriesAfterFetch(response.data.data);
 
       setSubCategoriesAfterFetch(response.data.sub_categories);
     } catch (error) {
@@ -38,7 +36,7 @@ const useFetchSingleCategories = (id: string) => {
     }
   }
 
-  return { category, isBusy, subCategory };
+  return { isDataFetched, isBusy, fitnessSubCategory };
 };
 
-export default useFetchSingleCategories;
+export default useFetchFitnessSubCategories;

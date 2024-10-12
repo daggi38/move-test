@@ -2,18 +2,18 @@ import { instanceWithOutCredential } from "../setup/axios-setup/endpoint-setup";
 import { useEffect } from "react";
 
 import { getCategoriesEndpoint } from "../setup/axios-setup/endpoints";
-import { useSIngleCategoryStore } from "../setup/state-store/single-category/store";
+import { useFitnessSubcategoryStore } from "../setup/state-store/sub-category/fitness-sub-category";
+import { useentertainmentSubcategoryStore } from "../setup/state-store/sub-category/entertainment-sub-categories.";
 
-const useFetchSingleCategories = (id: string) => {
+const useFetchEntertainmentSubCategories = (id: string) => {
   const {
-    category,
     isBusy,
-    setCategoriesAfterFetch,
     setIsBusy,
+    entertainmentSubCategory,
+    isDataFetched,
 
-    subCategory,
     setSubCategoriesAfterFetch,
-  } = useSIngleCategoryStore();
+  } = useentertainmentSubcategoryStore();
 
   useEffect(() => {
     if (id) {
@@ -28,8 +28,6 @@ const useFetchSingleCategories = (id: string) => {
         `${getCategoriesEndpoint}/${categoryId}`
       );
 
-      setCategoriesAfterFetch(response.data.data);
-
       setSubCategoriesAfterFetch(response.data.sub_categories);
     } catch (error) {
       console.error("Error fetching category:", error);
@@ -38,7 +36,7 @@ const useFetchSingleCategories = (id: string) => {
     }
   }
 
-  return { category, isBusy, subCategory };
+  return { isDataFetched, isBusy, entertainmentSubCategory};
 };
 
-export default useFetchSingleCategories;
+export default useFetchEntertainmentSubCategories;

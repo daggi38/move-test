@@ -10,8 +10,8 @@ interface CategoryProps {
 
 const CategoryHero: React.FC<CategoryProps> = ({ category ,isLoading}) => {
   return (
-    <HeroComponent
-    
+    <HeroComponent 
+    isHomePage={true}
       title={category.page_title}
       description={category.page_sub_title}
       imagePath={HeroImage}

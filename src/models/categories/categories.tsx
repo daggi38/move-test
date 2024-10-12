@@ -5,7 +5,7 @@ export interface Categories {
   page_title: string;
   page_sub_title: string;
   description: string;
-  sub_categories: SubCategory[];  
+  sub_categories: SubCategory[];
 }
 
 export interface SubCategory {
@@ -14,4 +14,10 @@ export interface SubCategory {
   description: string;
   short_desc?: string;
   category_id: string;
+  images:images[]
+}
+
+export interface images {
+  id: string;
+  path: string;
 }
