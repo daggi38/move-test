@@ -60,4 +60,40 @@
   }
   
 
+  .pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+  }
+  
+  .pagination .prev,
+  .pagination .next {
+    cursor: pointer;
+    padding: 10px 15px;
+    border-radius: 5px;
+  }
+  
+  .pagination .page,
+  .pagination .break {
+    margin: 0 5px;
+    cursor: pointer;
+    padding: 10px 15px;
+    border-radius: 5px;
+  }
+  
+  .pagination .active {
+   
+    color: white;
+  }
+  
+  .pagination .disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
+  
+  .page-numbers {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
   

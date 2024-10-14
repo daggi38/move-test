@@ -1,13 +1,20 @@
 import React from "react";
 import HeroComponent from "../../../../common/components/hero-component/HeroComponent";
 import TradeMill from "../../../../assets/images/fitness-cardio.jpg";
+import { SubCategory } from "../../../../models/categories/categories";
 
-const SubCategoryHero = () => {
+interface CategoryProps {
+  singleSubCategory: SubCategory;
+
+}
+
+const SubCategoryHero: React.FC<CategoryProps> = ({ singleSubCategory}) => {
   return (
     <HeroComponent
-      title=" title here"
-      description="subtitle here!"
+      title={singleSubCategory.title}
+      description={singleSubCategory.description}
       imagePath={TradeMill}
+      isHomePage={true}
     />
   );
 };

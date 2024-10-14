@@ -21,3 +21,15 @@ export interface images {
   id: string;
   path: string;
 }
+
+
+export interface Series {
+  [x: string]: any;
+  id: string;
+  title: string;
+  description: string;
+
+}
+
+
+

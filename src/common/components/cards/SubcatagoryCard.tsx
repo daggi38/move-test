@@ -4,11 +4,12 @@ type SubcategoryCardProps = {
   title: string;
   description: string;
   image: string;
+  onClick: () => void;
 };
 
-const SubcategoryCard: React.FC<SubcategoryCardProps> = ({ title, description, image }) => {
+const SubcategoryCard: React.FC<SubcategoryCardProps> = ({ title, description, image ,onClick}) => {
   return (
-    <div className="bg-primary  w-full lg:w-[395px] rounded-2xl">
+    <div className="bg-primary  w-full lg:w-[395px] rounded-2xl cursor-pointer" onClick={onClick}>
       <div className="flex flex-col items-center justify-center">
         <p className="text-light-yellow text-3xl font-normal p-5 pt-7 text-center font-Montserrat">
           {title}

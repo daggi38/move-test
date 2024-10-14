@@ -15,11 +15,11 @@ export const router = createBrowserRouter([
         element: <Main />,
       },
       {
-        path: "/category/:id", // Accepts 'id' as a dynamic parameter in the URL
+        path: "/category/:id", 
         element: <Category />,
       },
       {
-        path: "/subcategory",
+        path: "/subcategory/:id",
         element: <Subcategory />,
       },
       {

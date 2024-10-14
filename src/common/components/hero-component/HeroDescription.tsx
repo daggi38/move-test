@@ -32,7 +32,7 @@ const HeroDescription: React.FC<HeroDescriptionProps> = ({
           ) : (
             ""
           )}
-          <p className="text-2xl sm:text-3xl md:text-5xl font-raleway font-light">
+          <p className="text-2xl sm:text-3xl md:text-5xl font-raleway font-light text-light-yellow">
             {title}
           </p>
         </div>

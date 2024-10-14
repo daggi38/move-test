@@ -3,11 +3,13 @@ import React from "react";
 interface FitnessProgramCardProps {
   title: string;
   description: string;
+  onClick: () => void;
 }
 
 const FitnessProgramCard: React.FC<FitnessProgramCardProps> = ({
   title,
   description,
+  onClick,
 }) => {
   return (
     <div className="relative w-full md:w-[400px] h-[283px] bg-light-blue flex flex-col items-center just rounded-2xl">
@@ -22,7 +24,7 @@ const FitnessProgramCard: React.FC<FitnessProgramCardProps> = ({
       </p>
 
       <div className="absolute bottom-[-20px] right-[-20px] w-20 h-20 md:h-24 md:w-24 bg-primary rounded-full flex items-center justify-center">
-        <p className="text-light-yellow font-raleway text-xs md:text-base">Explore</p>
+        <p className="text-light-yellow font-raleway text-xs md:text-base cursor-pointer" onClick={onClick}>Explore</p>
       </div>
     </div>
   );
