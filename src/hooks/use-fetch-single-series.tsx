@@ -2,16 +2,16 @@ import { instanceWithOutCredential } from "../setup/axios-setup/endpoint-setup";
 import { useEffect } from "react";
 
 import { getSeriesEndpoint,  } from "../setup/axios-setup/endpoints";
-import { useSIngleSeriesStore } from "../setup/state-store/single-series/store";
+import { useSeriesStore } from "../setup/state-store/series/store";
 
 const useFetchSingleSeries= (id: string) => {
   const {
 isBusy,
 isDataFetched,
 setIsBusy,
-setSingleSeriesAfterFetch,
-singleSeries,
-  } = useSIngleSeriesStore();
+series,
+setSeriesAfterFetch
+  } = useSeriesStore();
 
   useEffect(() => {
     if (id) {
@@ -26,7 +26,7 @@ singleSeries,
         `${getSeriesEndpoint}/${seriesId}`
       );
 
-      setSingleSeriesAfterFetch(response.data.data);
+      setSeriesAfterFetch(response.data.data);
 
      
      // setSeriesAfterFetch(response.data.series);
@@ -37,7 +37,7 @@ singleSeries,
     }
   }
 
-  return { isBusy, singleSeries,isDataFetched};
+  return { isBusy, series,isDataFetched};
 };
 
 export default useFetchSingleSeries;

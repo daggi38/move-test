@@ -1,21 +1,21 @@
 import React from "react";
 import HeroDescription from "../../../../common/components/hero-component/HeroDescription";
-import { SubCategory } from "../../../../models/categories/categories";
+import { Series, SubCategory } from "../../../../models/categories/categories";
 import Subcategory from "../../Index";
 
 
 interface SeriesProps {
-  singleSubCategory: SubCategory
+  series: Series
   ;
 
 }
 
-const SeriesDescription: React.FC<SeriesProps> = ({ singleSubCategory}) => {
+const SeriesDescription: React.FC<SeriesProps> = ({ series}) => {
   return (
     <HeroDescription
       isCategoryPage={false}
-      title={singleSubCategory.title}
-      descriptionOne={singleSubCategory.description}
+      title={series.title}
+      descriptionOne={series.description}
     />
   );
 };

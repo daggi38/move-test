@@ -4,18 +4,17 @@ import TradeMill from "../../../../assets/images/fitness-cardio.jpg";
 import { Series, SubCategory } from "../../../../models/categories/categories";
 
 interface SeriesProps {
-  singleSeries: Series;
+  series: Series;
 
 }
 
 
-const SeriesHero: React.FC<SeriesProps> = ({ singleSeries,isBusy}) => {
+const SeriesHero: React.FC<SeriesProps> = ({ series,}) => {
   
-console.log(singleSeries)
   return (
     <HeroComponent
-      title={singleSeries.title}
-      description={singleSeries.description}
+      title={series.title}
+      description={series.description}
       imagePath={TradeMill}
       isHomePage={true}
     />

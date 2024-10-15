@@ -12,7 +12,7 @@ type SeriesSectionProps = {
 const ItemsSection: React.FC<SeriesSectionProps> = ({ series, isLoading }) => {
   const navigate = useNavigate();
 
-  const handleCardClick = (id: Key | null | undefined) => {
+  const handleCardClick = (id: Key | null) => {
     navigate(`/series/${id}`);
   };
 

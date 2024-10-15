@@ -10,20 +10,18 @@ import useFetchSingleSeries from "../../hooks/use-fetch-single-series";
 const Series = () => {
   const { id } = useParams<{ id?: string }>();
 
-  const { isBusy,singleSeries ,isDataFetched} = useFetchSingleSeries(id || "");
+  const { isBusy, series, isDataFetched } = useFetchSingleSeries(
+    id || ""
+  );
 
- 
-
-  const isLoading =
-  !isDataFetched ||
-  !singleSeries || isBusy ;
+  const isLoading = !isDataFetched || !series || isBusy;
 
   return (
     <div className="relative bg-gradient-to-r from-primary to-primary-light min-h-screen min-w-screen max-w-screen">
       <Header />
-      <SeriesHero  singleSeries={singleSeries}  />
-{/* <SeriesDescription singleSubCategory={singleSubCategory}/> */}
-      <ItemsSection SeriesId={singleSeries.id} isLoading={isBusy} />
+      <SeriesHero series={series} />
+      <SeriesDescription  series={series}   />
+      <ItemsSection SeriesId={series.id} isLoading={isBusy} />
       <Footer />
     </div>
   );

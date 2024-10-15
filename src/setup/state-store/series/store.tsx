@@ -5,27 +5,19 @@ import {
   SubCategory,
 } from "../../../models/categories/categories";
 
-type SubCategoryStore = {
+type SeriesStore = {
   series: Series;
-  subCategory: SubCategory;
+ 
 
   isBusy: boolean;
   isDataFetched: boolean;
   setSeriesAfterFetch: (data: Series) => void;
-  setSubCategoryAfterFetch: (data: SubCategory) => void;
   setIsBusy: (busy: boolean) => void;
 };
 
-export const useSubCategoryStore = create<SubCategoryStore>(
+export const useSeriesStore = create<SeriesStore>(
   (set) => ({
-    subCategory: {
-      id: "",
-      title: "",
-      description: "",
-      category_id: "",
-      images: [],
-      short_desc: ""
-    },
+    
     series: {
       id: "",
       title: "",
@@ -47,12 +39,6 @@ export const useSubCategoryStore = create<SubCategoryStore>(
       }));
     },
 
-    setSubCategoryAfterFetch: (data: SubCategory) => {
-      set(() => ({
-        subCategory: data,
-
-        isDataFetched: true,
-      }));
-    },
+   
   })
 );
