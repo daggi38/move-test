@@ -24,6 +24,7 @@ export const useSIngleSubCategoryStore = create<SingleSubCategoryStore>(
       description: "",
       category_id: "",
       images: [],
+      short_desc: ""
     },
     series: {
       id: "",

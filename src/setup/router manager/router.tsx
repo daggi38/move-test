@@ -5,6 +5,7 @@ import ThankYou from "../../pages/thank-you/Index";
 import Subcategory from "../../pages/sub-catagory/Index";
 import Category from "../../pages/catagory/Index";
 import Detail from "../../pages/detail/Index";
+import Series from "../../pages/series/Index";
 
 export const router = createBrowserRouter([
   {
@@ -23,11 +24,15 @@ export const router = createBrowserRouter([
         element: <Subcategory />,
       },
       {
+        path: "/series/:id",
+        element: <Series />,
+      },
+      {
         path: "/thank-you",
         element: <ThankYou />,
       },
       {
-        path: "/detail",
+        path: "/detail/:id",
         element: <Detail />,
       },
     ],

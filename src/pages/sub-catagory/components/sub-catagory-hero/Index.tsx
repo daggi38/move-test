@@ -12,7 +12,7 @@ const SubCategoryHero: React.FC<CategoryProps> = ({ singleSubCategory}) => {
   return (
     <HeroComponent
       title={singleSubCategory.title}
-      description={singleSubCategory.description}
+      description={singleSubCategory.short_desc}
       imagePath={TradeMill}
       isHomePage={true}
     />

@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import { FiShare2 } from "react-icons/fi";
 
 interface VideoCardProps {
@@ -6,13 +6,24 @@ interface VideoCardProps {
   views: number;
   description: string;
   image: string;
+  onClick: () => void;
 }
 
-const VideoCard: React.FC<VideoCardProps> = ({ title, views, description, image }) => {
+const VideoCard: React.FC<VideoCardProps> = ({
+  title,
+  views,
+  description,
+  image,
+  onClick,
+}) => {
   return (
-    <div className=" w-full md:w-[400px] h-[394px] bg-primary rounded-lg">
+    <div className=" w-full md:w-[400px] h-[394px] bg-primary rounded-lg cursor-pointer" onClick={onClick}>
       <div>
-        <img src={image} alt={title} className="h-[200px] w-full rounded-lg object-cover" />
+        <img
+          src={image}
+          alt={title}
+          className="h-[200px] w-full rounded-lg object-cover"
+        />
       </div>
       <div className="px-5">
         <div className="flex justify-between mt-2">
