@@ -14,7 +14,7 @@ const ThankYou = () => {
         imagePath={BackgroundImage}
       />
 
-      <Footer />
+    
     </div>
   );
 };
