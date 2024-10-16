@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import FitnessCardio from "../../../../assets/images/fitness-cardio.jpg";
 import FitnessWeight from "../../../../assets/images/fitness-weight.jpg";
 import FitnessProgramCard from "../../../../common/components/cards/FitnessProgram";
@@ -12,6 +12,7 @@ const FitnessProgram = () => {
     fitnessFeature,
     isDataFetched,
   } = useFetchFeaturedCollection();
+  const navigate=useNavigate()
 
   const categoryId = fitnessFeature?.category?.[0]?.id || "";
   const { fitnessSubCategory } = useFetchFitnessSubCategories(categoryId);
@@ -19,6 +20,11 @@ const FitnessProgram = () => {
   const isLoading =
     !isDataFetched || !fitnessFeature || !fitnessFeature.category.length;
 
+
+    const handleSubcategoryClick = (id: string) => {
+   
+      navigate(`/subcategory/${id}`);
+    };
 
     
   return (
@@ -75,6 +81,7 @@ const FitnessProgram = () => {
                 ))
               : fitnessSubCategory.slice(0, 3).map((subCategory) => (
                   <FitnessProgramCard
+                  onClick={()=>{handleSubcategoryClick(subCategory.id)}}
                     key={subCategory.id}
                     description={subCategory.description}
                     title={subCategory.title}

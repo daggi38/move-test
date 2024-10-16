@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router";
 import SubcategoryCard from "../../../../common/components/cards/SubcatagoryCard";
 import {
@@ -7,6 +7,7 @@ import {
 } from "../../../../models/categories/categories";
 import HeroImage from "../../../../assets/images/hero-image.jpg";
 import ShimmerIndicator from "../../../../common/components/shimmer-indicator/ShimmerIndicator";
+import ReactPaginate from "react-paginate";
 
 interface CategoryProps {
   category: Categories;
@@ -21,7 +22,23 @@ const CategorySection: React.FC<CategoryProps> = ({
 }) => {
   const navigate = useNavigate();
 
-  
+  const [currentPage, setCurrentPage] = useState(0);
+  const itemsPerPage = 8;
+
+  const pageCount = Math.ceil(subCategory.length / itemsPerPage);
+
+  const currentItems = subCategory.slice(
+    currentPage * itemsPerPage,
+    (currentPage + 1) * itemsPerPage
+  );
+
+  const handlePageClick = ({ selected }: { selected: number }) => {
+    setCurrentPage(selected);
+  };
+
+  const handleSubcategoryClick = (id: string) => {
+    navigate(`/subcategory/${id}`);
+  };
 
   return (
     <div className="min-h-screen flex flex-col p-4 sm:p-8 md:p-12 lg:p-20">
@@ -29,23 +46,42 @@ const CategorySection: React.FC<CategoryProps> = ({
         {category.title}
       </h2>
 
-       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-4 sm:gap-6 md:gap-8">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-4 sm:gap-6 md:gap-8">
         {isLoading ? (
           <>
             <ShimmerIndicator count={1} height={400} width={400} />
             <ShimmerIndicator count={1} height={400} width={400} />
           </>
         ) : (
-          subCategory.map((subCategories) => (
+          currentItems.map((subCategories) => (
             <SubcategoryCard
               key={subCategories.id}
               title={subCategories.title}
               description={subCategories.description}
               image={HeroImage}
+              onClick={() => handleSubcategoryClick(subCategories.id)}
             />
           ))
         )}
-      </div> 
+      </div>
+
+      {!isLoading && (
+        <ReactPaginate
+          className="text-light-yellow flex flex-row gap-5 text-center items-center justify-center pt-10"
+          breakLabel="..."
+          pageCount={pageCount}
+          marginPagesDisplayed={2}
+          pageRangeDisplayed={3}
+          onPageChange={handlePageClick}
+          containerClassName="pagination"
+          pageClassName="page"
+          activeClassName="active"
+          previousClassName="prev"
+          nextClassName="next"
+          breakClassName="break"
+          disabledClassName="disabled"
+        />
+      )}
     </div>
   );
 };

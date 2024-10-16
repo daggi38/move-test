@@ -16,8 +16,8 @@ const GetEntertained = () => {
   const { entertainmentSubCategory } =
     useFetchEntertainmentSubCategories(categoryId);
 
-  const isLoading = 
-  !isDataFetched ||
+  const isLoading =
+    !isDataFetched ||
     !entertainmentFeature ||
     !entertainmentFeature.category.length;
 
