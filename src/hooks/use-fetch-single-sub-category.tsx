@@ -4,8 +4,9 @@ import { useEffect } from "react";
 import { getSubCategoriesEndpint } from "../setup/axios-setup/endpoints";
 import {  useSubCategoryStore } from "../setup/state-store/sub-category/single-sub-category";
 
-const useFetchSingleSubCategories = (id: string) => {
+const useFetchSubCategories = (id: string) => {
   const {
+    tagItems,
     series,
     isDataFetched,
     setSeriesAfterFetch,
@@ -18,11 +19,11 @@ const useFetchSingleSubCategories = (id: string) => {
 
   useEffect(() => {
     if (id) {
-      fetchSingleSubCategory(id);
+      fetchSubCategory(id);
     }
   }, [id]);
 
-  async function fetchSingleSubCategory(subCategoryId: string) {
+  async function fetchSubCategory(subCategoryId: string) {
     try {
       setIsBusy(true);
       const response = await instanceWithOutCredential.get(
@@ -39,7 +40,7 @@ const useFetchSingleSubCategories = (id: string) => {
     }
   }
 
-  return { isBusy, subCategory ,series ,isDataFetched};
+  return { isBusy, subCategory ,series ,isDataFetched,tagItems};
 };
 
-export default useFetchSingleSubCategories;
+export default useFetchSubCategories;

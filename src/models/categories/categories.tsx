@@ -26,4 +26,11 @@ export interface Series {
   id: string;
   title: string;
   description: string;
+  tags:tags[]
+}
+
+export interface tags {
+  id: string;
+  title: string;
+ 
 }
