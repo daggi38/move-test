@@ -1,10 +1,8 @@
 import { create } from "zustand";
-import { Categories, SubCategory } from "../../../models/categories/categories";
 import { VideoModel } from "../../../models/video/video";
 
 type VideoStore = {
   videoList: VideoModel[];
-
   isBusy: boolean;
   isDataFetched: boolean;
   setVideoListAfterFetch: (data: VideoModel[]) => void;
@@ -22,9 +20,10 @@ export const useVideoStore = create<VideoStore>((set) => ({
   },
 
   setVideoListAfterFetch: (data: VideoModel[]) => {
-    set(() => ({
-      videoList: data,
+    const sortedVideos = data.sort((a, b) => a.episode - b.episode);
 
+    set(() => ({
+      videoList: sortedVideos,
       isDataFetched: true,
     }));
   },

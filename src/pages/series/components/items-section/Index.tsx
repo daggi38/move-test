@@ -10,13 +10,10 @@ type SeriesSectionProps = {
   isLoading: boolean;
 };
 
-const ItemsSection: React.FC<SeriesSectionProps> = ({
-  SeriesId,
- 
-}) => {
+const ItemsSection: React.FC<SeriesSectionProps> = ({ SeriesId }) => {
   const navigate = useNavigate();
 
-  const handleCardClick = (id: Key | null ) => {
+  const handleCardClick = (id: Key | null) => {
     navigate(`/detail/${id}`);
   };
 
@@ -29,6 +26,7 @@ const ItemsSection: React.FC<SeriesSectionProps> = ({
       description={video.description}
       image={""}
       views={0}
+      episode={video.episode.toString()}
       onClick={() => handleCardClick(video.id)}
     />
   ));

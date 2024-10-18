@@ -42,7 +42,7 @@ const Footer = () => {
   const categoryLinks = categories?.map((category) => (
     <Link
       key={category.id}
-      to="/category"
+      to={`/category/${category.id}`} 
       state={{ id: category.id }}
       onClick={() => {}}
     >
