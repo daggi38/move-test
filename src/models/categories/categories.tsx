@@ -12,9 +12,9 @@ export interface SubCategory {
   id: string;
   title: string;
   description: string;
-  short_desc?: string;
+  short_desc: string;
   category_id: string;
-  images:images[]
+  images: images[];
 }
 
 export interface images {
@@ -22,14 +22,15 @@ export interface images {
   path: string;
 }
 
-
 export interface Series {
-  [x: string]: any;
   id: string;
   title: string;
   description: string;
-
+  tags:tags[]
 }
 
-
-
+export interface tags {
+  id: string;
+  title: string;
+ 
+}

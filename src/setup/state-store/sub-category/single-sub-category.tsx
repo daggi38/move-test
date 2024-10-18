@@ -1,57 +1,56 @@
 import { create } from "zustand";
-import {
-  Categories,
-  Series,
-  SubCategory,
-} from "../../../models/categories/categories";
+import { Series, SubCategory } from "../../../models/categories/categories";
 
-type SingleSubCategoryStore = {
-  series: Series;
-  singleSubCategory: SubCategory;
+type SubCategoryStore = {
+  series: Series[];
+  subCategory: SubCategory;
 
   isBusy: boolean;
   isDataFetched: boolean;
-  setSeriesAfterFetch: (data: Series) => void;
-  setSingleSubCategoriesAfterFetch: (data: SubCategory) => void;
+  tagItems: string[]; 
+  setSeriesAfterFetch: (data: Series[]) => void;
+  setSubCategoryAfterFetch: (data: SubCategory) => void;
   setIsBusy: (busy: boolean) => void;
 };
 
-export const useSIngleSubCategoryStore = create<SingleSubCategoryStore>(
-  (set) => ({
-    singleSubCategory: {
-      id: "",
-      title: "",
-      description: "",
-      category_id: "",
-      images: [],
-    },
-    series: {
-      id: "",
-      title: "",
-      description: "",
-    },
+export const useSubCategoryStore = create<SubCategoryStore>((set) => ({
+  series: [],
+  subCategory: {
+    id: "",
+    title: "",
+    description: "",
+    category_id: "",
+    images: [],
+    short_desc: "",
+  },
+  isBusy: false,
+  isDataFetched: false,
+  tagItems: [],
 
-    isBusy: false,
-    isDataFetched: false,
+  setIsBusy: (busy: boolean) => {
+    set(() => ({ isBusy: busy }));
+  },
 
-    setIsBusy: (busy: boolean) => {
-      set(() => ({ isBusy: busy }));
-    },
+  setSeriesAfterFetch: (data: Series[]) => {
+    const uniqueTags = new Set<string>();
 
-    setSeriesAfterFetch: (data: Series) => {
-      set(() => ({
-        series: data,
+    data.forEach((seriesItem) => {
+      seriesItem.tags.forEach((tag) => {
+        uniqueTags.add(tag.title);
+      });
+    });
 
-        isDataFetched: true,
-      }));
-    },
+    set(() => ({
+      series: data,
+      tagItems: Array.from(uniqueTags), 
+      isDataFetched: true,
+    }));
+  },
 
-    setSingleSubCategoriesAfterFetch: (data: SubCategory) => {
-      set(() => ({
-        singleSubCategory: data,
-
-        isDataFetched: true,
-      }));
-    },
-  })
-);
+  setSubCategoryAfterFetch: (data: SubCategory) => {
+    set(() => ({
+      subCategory: data,
+      isDataFetched: true,
+    }));
+  },
+}));

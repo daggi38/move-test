@@ -40,6 +40,17 @@ const CategorySection: React.FC<CategoryProps> = ({
     navigate(`/subcategory/${id}`);
   };
 
+
+  const subCategories = currentItems.map((subCategories) => (
+    <SubcategoryCard
+      key={subCategories.id}
+      title={subCategories.title}
+      description={subCategories.description}
+      image={HeroImage}
+      onClick={() => handleSubcategoryClick(subCategories.id)}
+    />
+  ));
+
   return (
     <div className="min-h-screen flex flex-col p-4 sm:p-8 md:p-12 lg:p-20">
       <h2 className="text-light-yellow text-3xl sm:text-4xl md:text-5xl font-light font-Montserrat mb-6 sm:mb-8 md:mb-10">
@@ -53,35 +64,25 @@ const CategorySection: React.FC<CategoryProps> = ({
             <ShimmerIndicator count={1} height={400} width={400} />
           </>
         ) : (
-          currentItems.map((subCategories) => (
-            <SubcategoryCard
-              key={subCategories.id}
-              title={subCategories.title}
-              description={subCategories.description}
-              image={HeroImage}
-              onClick={() => handleSubcategoryClick(subCategories.id)}
-            />
-          ))
+          subCategories
         )}
       </div>
 
-      {!isLoading && (
-        <ReactPaginate
-          className="text-light-yellow flex flex-row gap-5 text-center items-center justify-center pt-10"
-          breakLabel="..."
-          pageCount={pageCount}
-          marginPagesDisplayed={2}
-          pageRangeDisplayed={3}
-          onPageChange={handlePageClick}
-          containerClassName="pagination"
-          pageClassName="page"
-          activeClassName="active"
-          previousClassName="prev"
-          nextClassName="next"
-          breakClassName="break"
-          disabledClassName="disabled"
-        />
-      )}
+      <ReactPaginate
+        className="text-light-yellow flex flex-row gap-5 text-center items-center justify-center pt-10"
+        breakLabel="..."
+        pageCount={pageCount}
+        marginPagesDisplayed={2}
+        pageRangeDisplayed={3}
+        onPageChange={handlePageClick}
+        containerClassName="pagination"
+        pageClassName="page"
+        activeClassName="active"
+        previousClassName="prev"
+        nextClassName="next"
+        breakClassName="break"
+        disabledClassName="disabled"
+      />
     </div>
   );
 };

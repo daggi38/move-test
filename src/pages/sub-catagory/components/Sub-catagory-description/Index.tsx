@@ -5,17 +5,17 @@ import Subcategory from "../../Index";
 
 
 interface CategoryProps {
-  singleSubCategory: SubCategory
-  ;
+  subCategory: SubCategory
+  
 
 }
 
-const SubCategoryDescription: React.FC<CategoryProps> = ({ singleSubCategory}) => {
+const SubCategoryDescription: React.FC<CategoryProps> = ({ subCategory}) => {
   return (
     <HeroDescription
       isCategoryPage={false}
-      title={singleSubCategory.title}
-      descriptionOne={singleSubCategory.description}
+      title={subCategory.title}
+      descriptionOne={subCategory.description}
     />
   );
 };

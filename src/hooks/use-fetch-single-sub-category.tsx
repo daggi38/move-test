@@ -2,34 +2,35 @@ import { instanceWithOutCredential } from "../setup/axios-setup/endpoint-setup";
 import { useEffect } from "react";
 
 import { getSubCategoriesEndpint } from "../setup/axios-setup/endpoints";
-import { useSIngleSubCategoryStore } from "../setup/state-store/sub-category/single-sub-category";
+import {  useSubCategoryStore } from "../setup/state-store/sub-category/single-sub-category";
 
-const useFetchSingleSubCategories = (id: string) => {
+const useFetchSubCategories = (id: string) => {
   const {
+    tagItems,
     series,
     isDataFetched,
     setSeriesAfterFetch,
     isBusy,
 
     setIsBusy,
-    setSingleSubCategoriesAfterFetch,
-    singleSubCategory,
-  } = useSIngleSubCategoryStore();
+ setSubCategoryAfterFetch,
+ subCategory
+  } = useSubCategoryStore();
 
   useEffect(() => {
     if (id) {
-      fetchSingleSubCategory(id);
+      fetchSubCategory(id);
     }
   }, [id]);
 
-  async function fetchSingleSubCategory(subCategoryId: string) {
+  async function fetchSubCategory(subCategoryId: string) {
     try {
       setIsBusy(true);
       const response = await instanceWithOutCredential.get(
         `${getSubCategoriesEndpint}/${subCategoryId}`
       );
 
-      setSingleSubCategoriesAfterFetch(response.data.data);
+      setSubCategoryAfterFetch(response.data.data);
 
       setSeriesAfterFetch(response.data.series);
     } catch (error) {
@@ -39,7 +40,7 @@ const useFetchSingleSubCategories = (id: string) => {
     }
   }
 
-  return { isBusy, singleSubCategory ,series ,isDataFetched};
+  return { isBusy, subCategory ,series ,isDataFetched,tagItems};
 };
 
-export default useFetchSingleSubCategories;
+export default useFetchSubCategories;

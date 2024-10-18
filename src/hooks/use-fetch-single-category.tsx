@@ -2,7 +2,7 @@ import { instanceWithOutCredential } from "../setup/axios-setup/endpoint-setup";
 import { useEffect } from "react";
 
 import { getCategoriesEndpoint } from "../setup/axios-setup/endpoints";
-import { useSIngleCategoryStore } from "../setup/state-store/single-category/store";
+import { useSIngleCategoryStore } from "../setup/state-store/category/store";
 
 const useFetchSingleCategories = (id: string) => {
   const {
