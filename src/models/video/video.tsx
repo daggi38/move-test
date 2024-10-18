@@ -6,6 +6,6 @@ export interface VideoModel {
   path: string;
   description: string;
   series_id:string;
-  episode:string;
+  episode:number;
   video_id:string;
 }
