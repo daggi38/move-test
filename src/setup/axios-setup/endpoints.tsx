@@ -7,4 +7,5 @@ export const getSubCategoriesEndpint: string="/sub-categories"
 
 export const getSeriesEndpoint: string="/series"
 export const getVideosEndpoint: string="videos"
+export const getSearchResultsEndpoint:string="/search"
 

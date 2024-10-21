@@ -6,6 +6,7 @@ import Subcategory from "../../pages/sub-catagory/Index";
 import Category from "../../pages/catagory/Index";
 import Detail from "../../pages/detail/Index";
 import Series from "../../pages/series/Index";
+import SearchResults from "../../pages/search-results/Index";
 
 export const router = createBrowserRouter([
   {
@@ -34,6 +35,10 @@ export const router = createBrowserRouter([
       {
         path: "/detail/:id",
         element: <Detail />,
+      },
+      {
+        path: "/search-results",
+        element: <SearchResults />,
       },
     ],
   },
