@@ -10,8 +10,8 @@ type EntertainmenrSubCategoryStore = {
   setIsBusy: (busy: boolean) => void;
 };
 
-export const useentertainmentSubcategoryStore = create<EntertainmenrSubCategoryStore>(
-  (set) => ({
+export const useentertainmentSubcategoryStore =
+  create<EntertainmenrSubCategoryStore>((set) => ({
     entertainmentSubCategory: [],
 
     isBusy: false,
@@ -28,5 +28,4 @@ export const useentertainmentSubcategoryStore = create<EntertainmenrSubCategoryS
         isDataFetched: true,
       }));
     },
-  })
-);
+  }));

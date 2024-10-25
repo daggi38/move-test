@@ -5,12 +5,16 @@ import { SubCategory } from "../../../../models/categories/categories";
 
 interface CategoryProps {
   subCategory: SubCategory;
-
+  isLoading: boolean;
 }
 
-const SubCategoryHero: React.FC<CategoryProps> = ({ subCategory}) => {
+const SubCategoryHero: React.FC<CategoryProps> = ({
+  subCategory,
+  isLoading,
+}) => {
   return (
     <HeroComponent
+      isLoading={isLoading}
       title={subCategory.title}
       description={subCategory.short_desc}
       imagePath={TradeMill}

@@ -23,8 +23,13 @@ export const useCategoriesStore = create<CategoriesStore>((set) => ({
   },
 
   setCategoriesAfterFetch: (data: Categories[]) => {
-    const fitnessCategory = data.find(category => category.title.toLowerCase() === 'fitness') || null;
-    const entertainmentCategory = data.find(category => category.title.toLowerCase() === 'entertainment') || null;
+    const fitnessCategory =
+      data.find((category) => category.title.toLowerCase() === "fitness") ||
+      null;
+    const entertainmentCategory =
+      data.find(
+        (category) => category.title.toLowerCase() === "entertainment"
+      ) || null;
 
     set(() => ({
       categories: data,

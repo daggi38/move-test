@@ -20,7 +20,11 @@ const About = () => {
         </div>
 
         <div className="flex items-center justify-center">
-          <img src={ImageOne} alt="Image One" className="w-full max-w-[400px]" />
+          <img
+            src={ImageOne}
+            alt="Image One"
+            className="w-full max-w-[400px]"
+          />
         </div>
       </div>
 
@@ -41,7 +45,11 @@ const About = () => {
         </div>
 
         <div className="flex items-center justify-center">
-          <img src={ImageTwo} alt="Image Two" className="w-full max-w-[400px]" />
+          <img
+            src={ImageTwo}
+            alt="Image Two"
+            className="w-full max-w-[400px]"
+          />
         </div>
       </div>
     </div>

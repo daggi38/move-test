@@ -9,7 +9,7 @@ type VimeoLinkStore = {
 };
 
 export const useVimeoLinkStore = create<VimeoLinkStore>((set) => ({
-    vimeoLink: "",
+  vimeoLink: "",
 
   isBusy: false,
   isDataFetched: false,
@@ -19,8 +19,6 @@ export const useVimeoLinkStore = create<VimeoLinkStore>((set) => ({
   },
 
   setVimeoLinkAfterFetch: (data: string) => {
- 
-
     set(() => ({
       vimeoLink: data,
       isDataFetched: true,

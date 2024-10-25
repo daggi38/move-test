@@ -4,15 +4,17 @@ type ShimmerIndicatorProps = {
   count: number;
   width: number;
   height: number;
+  className?: string; // Optional className prop
 };
 
 const ShimmerIndicator: React.FC<ShimmerIndicatorProps> = ({
   count,
   width,
   height,
+  className = "", 
 }) => {
   return (
-    <div className="flex flex-row flex-wrap gap-x-5 gap-y-5 ">
+    <div className={`flex flex-row flex-wrap gap-x-5 gap-y-5 ${className}`}>
       {Array.from({ length: count }).map((_, index) => (
         <div
           key={index}

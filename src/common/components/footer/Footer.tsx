@@ -1,4 +1,4 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { AiFillTwitterCircle } from "react-icons/ai";
 import { FaFacebook, FaPhoneAlt } from "react-icons/fa";
 import { MdLocationPin } from "react-icons/md";
@@ -7,10 +7,7 @@ import useFetchCategories from "../../../hooks/use-fetch-categories";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
-import {
-  subscribeEmail,
-  
-} from "../../../setup/state-store/email-subscription";
+import { subscribeEmail } from "../../../setup/state-store/email-subscription";
 import useEmailSubscriptionEffect from "../../../hooks/use-email-subscription-effect";
 
 const emailSubscriptionSchema = z.object({
@@ -20,17 +17,13 @@ const emailSubscriptionSchema = z.object({
 type EmailSubscriptionForm = z.infer<typeof emailSubscriptionSchema>;
 
 const Footer = () => {
-  const navigate = useNavigate();
-
   const { isLoading, errorMessage } = useEmailSubscriptionEffect();
-
   const { categories } = useFetchCategories();
 
   const {
     register,
     handleSubmit,
-    formState: { errors,  },
-    
+    formState: { errors },
   } = useForm<EmailSubscriptionForm>({
     resolver: zodResolver(emailSubscriptionSchema),
   });
@@ -42,7 +35,7 @@ const Footer = () => {
   const categoryLinks = categories?.map((category) => (
     <Link
       key={category.id}
-      to={`/category/${category.id}`} 
+      to={`/category/${category.id}`}
       state={{ id: category.id }}
       onClick={() => {}}
     >
@@ -60,14 +53,14 @@ const Footer = () => {
         <div className="text-light-grey font-raleway text-xl sm:text-2xl flex flex-col md:flex-row gap-4 md:gap-10 font-light items-center">
           {categoryLinks}
         </div>
-        <div className="flex flex-col items-center md:items-end gap-4">
-          <div className="flex gap-5 text-white">
+        <div className="flex flex-col items-center  md:items-start gap-4">
+          <div className="flex gap-5 text-white ">
             <AiFillTwitterCircle size={32} />
             <FaFacebook size={30} />
             <FaPhoneAlt size={28} />
           </div>
           <div className="flex text-white items-center">
-            <MdLocationPin size={32} />
+            <MdLocationPin size={34} />
             <p className="text-light-grey font-light text-sm sm:text-base text-center md:text-right">
               879 W. 190th St. Suite 400, <br /> Gardena, CA 90248 USA
             </p>
@@ -81,10 +74,7 @@ const Footer = () => {
         <p className="font-raleway font-light text-light-grey text-2xl sm:text-3xl">
           Subscribe
         </p>
-        <form
-          onSubmit={handleSubmit(onSubmit)}
-          className="flex w-full sm:w-auto"
-        >
+        <form onSubmit={handleSubmit(onSubmit)} className="flex w-full sm:w-auto">
           <input
             {...register("email")}
             placeholder="Your Email"
@@ -100,10 +90,10 @@ const Footer = () => {
           </button>
         </form>
         {errorMessage && (
-        <p className="text-red-500 text-base text-center mt-2">
-          {errorMessage}
-        </p>
-      )}
+          <p className="text-red-500 text-base text-center mt-2">
+            {errorMessage}
+          </p>
+        )}
       </div>
 
       {errors.email && (
@@ -112,14 +102,19 @@ const Footer = () => {
         </p>
       )}
 
-     
-
       <div className="flex items-center justify-center mt-10 pb-8">
         <p className="text-light-grey text-sm sm:text-base md:text-xl font-light text-center">
           <span>MoveIt. Copyright @ </span>
           <span>{new Date().getFullYear()} </span>
           <span>Powered By </span>
-          <span className="font-bold">VP Solutions</span>
+          <a
+            href="https://vptrading.et/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-bold "
+          >
+            VP Solutions
+          </a>
         </p>
       </div>
     </div>

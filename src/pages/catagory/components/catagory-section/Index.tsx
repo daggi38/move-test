@@ -40,7 +40,6 @@ const CategorySection: React.FC<CategoryProps> = ({
     navigate(`/subcategory/${id}`);
   };
 
-
   const subCategories = currentItems.map((subCategories) => (
     <SubcategoryCard
       key={subCategories.id}

@@ -10,7 +10,6 @@ const SearchBar: React.FC = () => {
   const navigate = useNavigate();
 
   const onSubmit = (data: SearchFormData) => {
-    // Navigate to the search results page with the query parameter
     navigate(`/search-results?q=${data.title}`);
   };
 

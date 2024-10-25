@@ -4,7 +4,6 @@ import { DashboardStats } from "../../../models/dashboard-stats/dashboard-stats"
 
 type DashboardStat = {
   dashboardStat: DashboardStats[];
-  
 
   isBusy: boolean;
   isDataFetched: boolean;
@@ -13,7 +12,6 @@ type DashboardStat = {
 };
 
 export const useDashboardStatStore = create<DashboardStat>((set) => ({
-  
   dashboardStat: [],
 
   isBusy: false,
@@ -23,16 +21,11 @@ export const useDashboardStatStore = create<DashboardStat>((set) => ({
     set(() => ({ isBusy: busy }));
   },
 
-
-
   setDashBoardstat: (data: DashboardStats[]) => {
-
-
     set(() => ({
       dashboardStat: data,
-     
+
       isDataFetched: true,
     }));
   },
-  
 }));

@@ -3,16 +3,19 @@ import React from "react";
 interface GetEntertainedCard {
   imageUrl: string;
   title: string;
+  onClick: () => void;
 }
 
 const GetEntertainedCard: React.FC<GetEntertainedCard> = ({
   imageUrl,
   title,
+  onClick
 }) => {
   return (
     <div
-      className="relative  w-full md:w-[438px] h-full bg-cover bg-center rounded-3xl"
+      className="relative  w-full md:w-[438px] h-full bg-cover bg-center rounded-3xl cursor-pointer"
       style={{ backgroundImage: `url(${imageUrl})` }}
+      onClick={onClick}
     >
    
       <div className="absolute inset-0 bg-black opacity-50 rounded-3xl"></div>
