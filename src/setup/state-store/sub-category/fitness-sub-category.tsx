@@ -12,14 +12,16 @@ type FitnessSubCategoryStore = {
 
 export const useFitnessSubcategoryStore = create<FitnessSubCategoryStore>(
   (set) => ({
-    fitnessSubCategory: [{
-      id: "",
-      title: "",
-      description: "",
-      category_id: "",
-      images: [],
-      short_desc: ""
-    }],
+    fitnessSubCategory: [
+      {
+        id: "",
+        title: "",
+        description: "",
+        category_id: "",
+        images: [],
+        short_desc: "",
+      },
+    ],
 
     isBusy: false,
     isDataFetched: false,

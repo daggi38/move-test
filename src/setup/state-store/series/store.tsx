@@ -7,7 +7,6 @@ import {
 
 type SeriesStore = {
   series: Series;
- 
 
   isBusy: boolean;
   isDataFetched: boolean;
@@ -15,30 +14,26 @@ type SeriesStore = {
   setIsBusy: (busy: boolean) => void;
 };
 
-export const useSeriesStore = create<SeriesStore>(
-  (set) => ({
-    
-    series: {
-      id: "",
-      title: "",
-      description: "",
-    },
+export const useSeriesStore = create<SeriesStore>((set) => ({
+  series: {
+    id: "",
+    title: "",
+    description: "",
+    tags: []
+  },
 
-    isBusy: false,
-    isDataFetched: false,
+  isBusy: false,
+  isDataFetched: false,
 
-    setIsBusy: (busy: boolean) => {
-      set(() => ({ isBusy: busy }));
-    },
+  setIsBusy: (busy: boolean) => {
+    set(() => ({ isBusy: busy }));
+  },
 
-    setSeriesAfterFetch: (data: Series) => {
-      set(() => ({
-        series: data,
+  setSeriesAfterFetch: (data: Series) => {
+    set(() => ({
+      series: data,
 
-        isDataFetched: true,
-      }));
-    },
-
-   
-  })
-);
+      isDataFetched: true,
+    }));
+  },
+}));

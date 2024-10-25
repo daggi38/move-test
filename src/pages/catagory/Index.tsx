@@ -9,17 +9,18 @@ import useFetchSingleCategories from "../../hooks/use-fetch-single-category";
 const Category = () => {
   const { id } = useParams<{ id?: string }>();
 
- 
-  const { category, subCategory ,isBusy  } = useFetchSingleCategories(id || "");
-
-  
+  const { category, subCategory, isBusy } = useFetchSingleCategories(id || "");
 
   return (
     <div className="relative bg-gradient-to-r from-primary to-primary-light min-h-screen min-w-screen max-w-screen">
       <Header />
-      <CategoryHero category={category} isLoading={isBusy}/>
-      <CategoryDescription category={category}  />
-      <CategorySection category={category} subCategory={subCategory} isLoading={isBusy} />
+      <CategoryHero category={category} isLoading={isBusy} />
+      <CategoryDescription category={category} />
+      <CategorySection
+        category={category}
+        subCategory={subCategory}
+        isLoading={isBusy}
+      />
       <Footer />
     </div>
   );

@@ -1,9 +1,10 @@
-import React, { Key } from "react";
+import React, { Key, useState } from "react";
 import VideoCard from "../../../../common/components/cards/VideoCard";
 import { VideoModel } from "../../../../models/video/video";
 import useFetchVideos from "../../../../hooks/use-fetch-videos";
 import { useNavigate, useParams } from "react-router";
 import ShimmerIndicator from "../../../../common/components/shimmer-indicator/ShimmerIndicator";
+import ReactPaginate from "react-paginate";
 
 interface EpisodeProps {
   episode: VideoModel;
@@ -18,15 +19,28 @@ const RecommendationSection: React.FC<EpisodeProps> = ({
   const { id } = useParams<{ id?: string }>();
   const navigate = useNavigate();
 
+  const itemsPerPage = 8;
+  const [currentPage, setCurrentPage] = useState(0);
+
+  const pageCount = Math.ceil(videoList.length / itemsPerPage);
+
+  const currentItems = videoList.slice(
+    currentPage * itemsPerPage,
+    (currentPage + 1) * itemsPerPage
+  );
+
+  const handlePageClick = ({ selected }: { selected: number }) => {
+    setCurrentPage(selected);
+  };
+
   const handleCardClick = (videoId: Key | null | undefined) => {
     if (id === videoId) {
       return;
     }
-
     navigate(`/detail/${videoId}`);
   };
 
-  const videos = videoList.map((video: VideoModel) => (
+  const videos = currentItems.map((video: VideoModel) => (
     <VideoCard
       episode={video.episode.toString()}
       key={video.id}
@@ -54,6 +68,22 @@ const RecommendationSection: React.FC<EpisodeProps> = ({
           hasVideos && videos
         )}
       </div>
+
+      <ReactPaginate
+        className="text-light-yellow flex flex-row gap-5 text-center items-center justify-center pt-10 mb-5"
+        breakLabel="..."
+        pageCount={pageCount}
+        marginPagesDisplayed={2}
+        pageRangeDisplayed={3}
+        onPageChange={handlePageClick}
+        containerClassName="pagination"
+        pageClassName="page"
+        activeClassName="active"
+        previousClassName="prev"
+        nextClassName="next"
+        breakClassName="break"
+        disabledClassName="disabled"
+      />
     </div>
   );
 };

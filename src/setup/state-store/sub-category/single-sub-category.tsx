@@ -7,7 +7,7 @@ type SubCategoryStore = {
 
   isBusy: boolean;
   isDataFetched: boolean;
-  tagItems: string[]; 
+  tagItems: string[];
   setSeriesAfterFetch: (data: Series[]) => void;
   setSubCategoryAfterFetch: (data: SubCategory) => void;
   setIsBusy: (busy: boolean) => void;
@@ -42,7 +42,7 @@ export const useSubCategoryStore = create<SubCategoryStore>((set) => ({
 
     set(() => ({
       series: data,
-      tagItems: Array.from(uniqueTags), 
+      tagItems: Array.from(uniqueTags),
       isDataFetched: true,
     }));
   },

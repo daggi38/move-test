@@ -11,7 +11,7 @@ const useEmailSubscriptionEffect = () => {
   useEffect(() => {
     if (isSuccess) {
 
-      navigate("thank-you");
+      navigate("/thank-you");
       setSuccess(false);
     } else if (errorMessage) {
     }

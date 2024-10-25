@@ -19,7 +19,7 @@ const Subcategory = () => {
   return (
     <div className="relative bg-gradient-to-r from-primary to-primary-light min-h-screen min-w-screen max-w-screen">
       <Header />
-      <SubCategoryHero subCategory={subCategory} />
+      <SubCategoryHero subCategory={subCategory} isLoading={isBusy} />
       <SubCategoryDescription subCategory={subCategory} />
       <ItemsSection series={series} isLoading={isLoading} tagItems={tagItems} />
       <Footer />

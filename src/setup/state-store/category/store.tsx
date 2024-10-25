@@ -3,8 +3,8 @@ import { Categories, SubCategory } from "../../../models/categories/categories";
 
 type SingleCategoryStore = {
   category: Categories;
-  subCategory:SubCategory[];
- 
+  subCategory: SubCategory[];
+
   isBusy: boolean;
   isDataFetched: boolean;
   setCategoriesAfterFetch: (data: Categories) => void;
@@ -13,7 +13,7 @@ type SingleCategoryStore = {
 };
 
 export const useSIngleCategoryStore = create<SingleCategoryStore>((set) => ({
-  subCategory:[],
+  subCategory: [],
 
   category: {
     id: "",
@@ -22,7 +22,7 @@ export const useSIngleCategoryStore = create<SingleCategoryStore>((set) => ({
     page_title: "",
     page_sub_title: "",
     description: "",
-    sub_categories: []
+    sub_categories: [],
   },
 
   isBusy: false,
@@ -33,20 +33,16 @@ export const useSIngleCategoryStore = create<SingleCategoryStore>((set) => ({
   },
 
   setCategoriesAfterFetch: (data: Categories) => {
-
-
     set(() => ({
       category: data,
-     
+
       isDataFetched: true,
     }));
   },
   setSubCategoriesAfterFetch: (data: SubCategory[]) => {
-
-
     set(() => ({
       subCategory: data,
-     
+
       isDataFetched: true,
     }));
   },

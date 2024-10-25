@@ -5,14 +5,13 @@ import { Series, SubCategory } from "../../../../models/categories/categories";
 
 interface SeriesProps {
   series: Series;
-
+  isLoading: boolean;
 }
 
-
-const SeriesHero: React.FC<SeriesProps> = ({ series,}) => {
-  
+const SeriesHero: React.FC<SeriesProps> = ({ series, isLoading }) => {
   return (
     <HeroComponent
+      isLoading={isLoading}
       title={series.title}
       description={series.description}
       imagePath={TradeMill}

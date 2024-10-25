@@ -12,14 +12,14 @@ type EpisodeStore = {
 };
 
 export const useEpisodeStore = create<EpisodeStore>((set) => ({
-  episode:{
+  episode: {
     id: "",
     title: "",
     path: "",
     description: "",
     series_id: "",
-    episode: "",
-    video_id: ""
+    episode: 0,
+    video_id: "",
   },
 
   isBusy: false,

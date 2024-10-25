@@ -41,7 +41,6 @@ const ItemsSection: React.FC<SeriesSectionProps> = ({
     navigate(`/series/${id}`);
   };
 
-  
   const tagItemsList = ["All", ...tagItems].map((tag) => (
     <div key={tag}>
       <p

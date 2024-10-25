@@ -3,14 +3,11 @@ import HeroDescription from "../../../../common/components/hero-component/HeroDe
 import { Series, SubCategory } from "../../../../models/categories/categories";
 import Subcategory from "../../Index";
 
-
 interface SeriesProps {
-  series: Series
-  ;
-
+  series: Series;
 }
 
-const SeriesDescription: React.FC<SeriesProps> = ({ series}) => {
+const SeriesDescription: React.FC<SeriesProps> = ({ series }) => {
   return (
     <HeroDescription
       isCategoryPage={false}
