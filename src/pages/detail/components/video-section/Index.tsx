@@ -10,7 +10,7 @@ interface EpisodeProps {
 }
 const vimeoAccessToken = import.meta.env.VITE_REACT_APP_SECRET_KEY;
 
-const VideoSection: React.FC<EpisodeProps> = ({ episode, isLoading }) => {
+const VideoSection: React.FC<EpisodeProps> = ({ episode }) => {
   const { vimeoLink, isBusy } = useFetchVimeoLink(
     vimeoAccessToken,
     episode.path

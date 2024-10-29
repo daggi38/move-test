@@ -13,7 +13,7 @@ interface EpisodeProps {
 
 const RecommendationSection: React.FC<EpisodeProps> = ({
   episode,
-  isLoading,
+ 
 }) => {
   const { videoList, hasVideos, isBusy } = useFetchVideos(episode.series_id);
   const { id } = useParams<{ id?: string }>();
@@ -46,7 +46,7 @@ const RecommendationSection: React.FC<EpisodeProps> = ({
       key={video.id}
       title={video.title}
       description={video.description}
-      image={""}
+      image={video.images[0]?.path || ""}
       views={0}
       onClick={() => handleCardClick(video.id)}
       isVideoDisplayed={id === video.id}

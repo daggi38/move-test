@@ -33,6 +33,7 @@ const useFetchSubCategories = (id: string) => {
       setSubCategoryAfterFetch(response.data.data);
 
       setSeriesAfterFetch(response.data.series);
+
     } catch (error) {
       console.error("Error fetching category:", error);
     } finally {

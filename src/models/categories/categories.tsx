@@ -6,6 +6,7 @@ export interface Categories {
   page_sub_title: string;
   description: string;
   sub_categories: SubCategory[];
+  images:Images[]
 }
 
 export interface SubCategory {
@@ -14,10 +15,10 @@ export interface SubCategory {
   description: string;
   short_desc: string;
   category_id: string;
-  images: images[];
+  images: Images[];
 }
 
-export interface images {
+export interface Images {
   id: string;
   path: string;
 }
@@ -27,6 +28,7 @@ export interface Series {
   title: string;
   description: string;
   tags:tags[]
+  images:Images[]
 }
 
 export interface tags {

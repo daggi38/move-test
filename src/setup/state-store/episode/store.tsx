@@ -1,5 +1,4 @@
 import { create } from "zustand";
-import { Categories, SubCategory } from "../../../models/categories/categories";
 import { VideoModel } from "../../../models/video/video";
 
 type EpisodeStore = {
@@ -20,6 +19,7 @@ export const useEpisodeStore = create<EpisodeStore>((set) => ({
     series_id: "",
     episode: 0,
     video_id: "",
+    images: [],
   },
 
   isBusy: false,

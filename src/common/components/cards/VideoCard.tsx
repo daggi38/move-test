@@ -1,5 +1,5 @@
 import React from "react";
-import { FiShare2 } from "react-icons/fi";
+import { FiShare2, FiPlay } from "react-icons/fi";
 
 interface VideoCardProps {
   episode: string;
@@ -14,7 +14,6 @@ interface VideoCardProps {
 const VideoCard: React.FC<VideoCardProps> = ({
   episode,
   title,
-  views,
   description,
   image,
   onClick,
@@ -36,17 +35,22 @@ const VideoCard: React.FC<VideoCardProps> = ({
   };
 
   return (
-    <div
-      className="relative w-full sm:w-[300px] md:w-[350px] lg:w-[400px] bg-primary rounded-lg shadow-md overflow-hidden"
-    >
+    <div className="relative w-full bg-primary rounded-lg shadow-md overflow-hidden">
       <div className="relative cursor-pointer" onClick={onClick}>
         <img
           src={image}
           alt={title}
           className="w-full h-[180px] sm:h-[200px] md:h-[220px] lg:h-[240px] object-cover rounded-t-lg"
         />
-        {isVideoDisplayed && (
-          <div className="absolute inset-0 bg-light-yellow opacity-20 rounded-t-lg flex items-center justify-center"></div>
+        {isVideoDisplayed ? (
+          <div className="absolute inset-0 bg-black opacity-80 rounded-t-lg flex items-center justify-center">
+            <p className="text-3xl text-light-yellow">Playing</p>
+          </div>
+        ) : (
+          <div className="absolute inset-0 flex items-center justify-center">
+            <div className="bg-black rounded-full flex items-center justify-center"> 
+            <FiPlay className="text-white text-5xl  p-3" fill="white" /></div>
+          </div>
         )}
       </div>
 
@@ -61,8 +65,8 @@ const VideoCard: React.FC<VideoCardProps> = ({
               <span>{episode}</span>
             </p>
             <p>
-              <span>Views </span>
-              <span>{views}</span>
+              {/* <span>Views </span>
+              <span>{views}</span> */}
             </p>
           </div>
         </div>

@@ -23,6 +23,7 @@ export const useSIngleCategoryStore = create<SingleCategoryStore>((set) => ({
     page_sub_title: "",
     description: "",
     sub_categories: [],
+    images: []
   },
 
   isBusy: false,

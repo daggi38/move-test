@@ -1,7 +1,6 @@
 import React from "react";
 import HeroDescription from "../../../../common/components/hero-component/HeroDescription";
-import { Series, SubCategory } from "../../../../models/categories/categories";
-import Subcategory from "../../Index";
+import { Series} from "../../../../models/categories/categories";
 
 interface SeriesProps {
   series: Series;

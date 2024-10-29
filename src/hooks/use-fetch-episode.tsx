@@ -1,8 +1,7 @@
 import { instanceWithOutCredential } from "../setup/axios-setup/endpoint-setup";
 import { useEffect } from "react";
 
-import { getSeriesEndpoint, getVideosEndpoint,  } from "../setup/axios-setup/endpoints";
-import { useSeriesStore } from "../setup/state-store/series/store";
+import {  getVideosEndpoint,  } from "../setup/axios-setup/endpoints";
 import { useEpisodeStore } from "../setup/state-store/episode/store";
 
 const useFetchEpisode= (id: string) => {

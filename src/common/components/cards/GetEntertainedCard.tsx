@@ -13,7 +13,7 @@ const GetEntertainedCard: React.FC<GetEntertainedCard> = ({
 }) => {
   return (
     <div
-      className="relative  w-full md:w-[438px] h-full bg-cover bg-center rounded-3xl cursor-pointer"
+      className="relative  w-full xl:w-[438px] h-full bg-cover bg-center rounded-3xl cursor-pointer"
       style={{ backgroundImage: `url(${imageUrl})` }}
       onClick={onClick}
     >
@@ -22,7 +22,7 @@ const GetEntertainedCard: React.FC<GetEntertainedCard> = ({
 
    
       <div className="relative z-10 flex items-end justify-center h-full">
-        <p className="text-4xl text-light-grey font-raleway pb-5">
+        <p className="text-2xl lg:text-4xl text-center text-light-grey font-raleway pb-5">
           {title}
         </p>
       </div>

@@ -24,7 +24,7 @@ const ItemsSection: React.FC<SeriesSectionProps> = ({ SeriesId }) => {
       key={video.id}
       title={video.title}
       description={video.description}
-      image={""}
+      image={video.images[0]?.path || ""}
       views={0}
       episode={video.episode.toString()}
       onClick={() => handleCardClick(video.id)}

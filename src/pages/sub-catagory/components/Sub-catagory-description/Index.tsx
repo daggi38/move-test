@@ -1,7 +1,6 @@
 import React from "react";
 import HeroDescription from "../../../../common/components/hero-component/HeroDescription";
 import { SubCategory } from "../../../../models/categories/categories";
-import Subcategory from "../../Index";
 
 interface CategoryProps {
   subCategory: SubCategory;

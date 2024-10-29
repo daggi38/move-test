@@ -1,6 +1,5 @@
 import React from "react";
 import HeroComponent from "../../../../common/components/hero-component/HeroComponent";
-import TradeMill from "../../../../assets/images/fitness-cardio.jpg";
 import { SubCategory } from "../../../../models/categories/categories";
 
 interface CategoryProps {
@@ -17,7 +16,7 @@ const SubCategoryHero: React.FC<CategoryProps> = ({
       isLoading={isLoading}
       title={subCategory.title}
       description={subCategory.short_desc}
-      imagePath={TradeMill}
+      imagePath={subCategory.images[0]?.path || ""}
       isHomePage={true}
     />
   );

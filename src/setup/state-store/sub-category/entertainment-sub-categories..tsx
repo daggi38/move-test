@@ -1,5 +1,5 @@
 import { create } from "zustand";
-import { Categories, SubCategory } from "../../../models/categories/categories";
+import {  SubCategory } from "../../../models/categories/categories";
 
 type EntertainmenrSubCategoryStore = {
   entertainmentSubCategory: SubCategory[];

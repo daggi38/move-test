@@ -1,8 +1,8 @@
 import { create } from "zustand";
 import {
-  Categories,
+
   Series,
-  SubCategory,
+ 
 } from "../../../models/categories/categories";
 
 type SeriesStore = {
@@ -19,7 +19,8 @@ export const useSeriesStore = create<SeriesStore>((set) => ({
     id: "",
     title: "",
     description: "",
-    tags: []
+    tags: [],
+    images: []
   },
 
   isBusy: false,

@@ -1,6 +1,6 @@
 import { create } from "zustand";
 import {
-  instance,
+
   instanceWithOutCredential,
 } from "../axios-setup/endpoint-setup";
 

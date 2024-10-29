@@ -1,4 +1,4 @@
-import { Categories } from "../categories/categories";
+import { Images } from "../categories/categories";
 
 export interface VideoModel {
   id: string;
@@ -8,6 +8,7 @@ export interface VideoModel {
   series_id:string;
   episode:number;
   video_id:string;
+  images:Images[]
 }
 
 

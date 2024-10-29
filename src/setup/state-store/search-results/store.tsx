@@ -1,9 +1,5 @@
 import { create } from "zustand";
-import {
-  Categories,
-  Series,
-  SubCategory,
-} from "../../../models/categories/categories";
+
 import { SearchResult } from "../../../models/search-results/search-results";
 
 type SearchResultsStore = {

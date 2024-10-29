@@ -20,6 +20,7 @@ export const useFeaturedCollectionStore = create<FeaturedCollectionStore>(
       description: "",
       position: "",
       category: [],
+      images: []
     },
     entertainmentFeature: {
       id: "",
@@ -27,6 +28,7 @@ export const useFeaturedCollectionStore = create<FeaturedCollectionStore>(
       description: "",
       position: "",
       category: [],
+      images: []
     },
 
     isBusy: false,
@@ -45,6 +47,8 @@ export const useFeaturedCollectionStore = create<FeaturedCollectionStore>(
         description: "",
         position: "",
         category: [],
+        images:[],
+
       };
 
       const entertainmentFeature = data.find(
@@ -55,6 +59,7 @@ export const useFeaturedCollectionStore = create<FeaturedCollectionStore>(
         description: "",
         position: "",
         category: [],
+        images:[],
       };
 
       set(() => ({
