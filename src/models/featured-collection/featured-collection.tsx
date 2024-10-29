@@ -1,11 +1,11 @@
-import { Categories } from "../categories/categories";
 
 export interface FeaturedCollection {
   id: string;
   title: string;
   description: string;
   position: string;
-  category: FeaturedCollectionCategories[];  
+  category: FeaturedCollectionCategories[];
+  images: Images[];
 }
 
 export interface FeaturedCollectionCategories {
@@ -15,4 +15,9 @@ export interface FeaturedCollectionCategories {
   page_title: string;
   page_sub_title: string;
   description: string;
+}
+
+export interface Images {
+  id: string;
+  path: string;
 }

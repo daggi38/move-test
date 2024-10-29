@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, useNavigate } from "react-router-dom"; // Import useNavigate
+import {  useNavigate } from "react-router-dom"; 
 import ShimmerIndicator from "../shimmer-indicator/ShimmerIndicator";
 
 interface HeroComponentProps {
@@ -9,6 +9,7 @@ interface HeroComponentProps {
   isThankyouPage?: boolean;
   isHomePage?: boolean;
   isLoading: boolean;
+  isFullscreen?:boolean;
 }
 
 const HeroComponent: React.FC<HeroComponentProps> = ({
@@ -16,10 +17,11 @@ const HeroComponent: React.FC<HeroComponentProps> = ({
   title,
   description,
   isThankyouPage = false,
-  isHomePage = false,
+  isHomePage = true,
+  isFullscreen = false,
   isLoading,
 }) => {
-  const heroHeight = isHomePage ? "h-[60vh]" : "h-[95vh]";
+  const heroHeight = isFullscreen ? "h-[95vh]" : "h-[60vh]";
   const navigate = useNavigate();
 
   const handleBackNavigation = () => {
@@ -31,7 +33,7 @@ const HeroComponent: React.FC<HeroComponentProps> = ({
       <div
         className={`relative w-full ${heroHeight} justify-center items-center`}
       >
-        {!isHomePage && (
+        {isHomePage && (
           <>
             <img
               src={imagePath}

@@ -9,6 +9,7 @@ import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { subscribeEmail } from "../../../setup/state-store/email-subscription";
 import useEmailSubscriptionEffect from "../../../hooks/use-email-subscription-effect";
+import { moveItLocation } from "../../app-strings";
 
 const emailSubscriptionSchema = z.object({
   email: z.string().email({ message: "Please enter a valid email address." }),
@@ -62,7 +63,7 @@ const Footer = () => {
           <div className="flex text-white items-center">
             <MdLocationPin size={34} />
             <p className="text-light-grey font-light text-sm sm:text-base text-center md:text-right">
-              879 W. 190th St. Suite 400, <br /> Gardena, CA 90248 USA
+              {moveItLocation}
             </p>
           </div>
         </div>

@@ -6,12 +6,12 @@ import ShimmerIndicator from "../../../../common/components/shimmer-indicator/Sh
 
 const GetEntertained = () => {
   const navigate = useNavigate();
-  const { entertainmentFeature, isDataFetched } = useFetchFeaturedCollection();
+  const { entertainmentFeature } = useFetchFeaturedCollection();
   const categoryId = entertainmentFeature?.category?.[0]?.id || "";
   const { entertainmentSubCategory, isBusy } =
     useFetchEntertainmentSubCategories(categoryId);
 
-  const entertainmentItems = entertainmentSubCategory;
+  const entertainmentItems = entertainmentSubCategory.slice(0, 5);
 
   const handleSubcategoryClick = (id: string) => {
     navigate(`/subcategory/${id}`);
@@ -41,7 +41,7 @@ const GetEntertained = () => {
                     handleSubcategoryClick(entertainmentItems[0].id)
                   }
                   title={entertainmentItems[0].title}
-                  imageUrl={entertainmentItems[0].imageUrl}
+                  imageUrl={entertainmentItems[0].images[0]?.path || ""}
                 />
               </div>
               <div className="h-[300px]">
@@ -50,7 +50,7 @@ const GetEntertained = () => {
                     handleSubcategoryClick(entertainmentItems[1].id)
                   }
                   title={entertainmentItems[1].title}
-                  imageUrl={entertainmentItems[1].imageUrl}
+                  imageUrl={entertainmentItems[1].images[0]?.path || ""}
                 />
               </div>
             </div>
@@ -58,7 +58,7 @@ const GetEntertained = () => {
               <GetEntertainedCard
                 onClick={() => handleSubcategoryClick(entertainmentItems[2].id)}
                 title={entertainmentItems[2].title}
-                imageUrl={entertainmentItems[2].imageUrl}
+                imageUrl={entertainmentItems[2].images[0]?.path || ""}
               />
             </div>
             <div className="flex flex-col gap-5">
@@ -68,7 +68,7 @@ const GetEntertained = () => {
                     handleSubcategoryClick(entertainmentItems[3].id)
                   }
                   title={entertainmentItems[3].title}
-                  imageUrl={entertainmentItems[3].imageUrl}
+                  imageUrl={entertainmentItems[3].images[0]?.path || ""}
                 />
               </div>
               <div className="h-[300px]">
@@ -77,7 +77,7 @@ const GetEntertained = () => {
                     handleSubcategoryClick(entertainmentItems[4].id)
                   }
                   title={entertainmentItems[4].title}
-                  imageUrl={entertainmentItems[4].imageUrl}
+                  imageUrl={entertainmentItems[4].images[0]?.path || ""}
                 />
               </div>
             </div>
@@ -93,7 +93,7 @@ const GetEntertained = () => {
                     handleSubcategoryClick(entertainmentItems[3].id)
                   }
                   title={entertainmentItems[3].title}
-                  imageUrl={entertainmentItems[3].imageUrl}
+                  imageUrl={entertainmentItems[3].images[0]?.path || ""}
                 />
               </div>
               <div className="h-[300px]">
@@ -102,7 +102,7 @@ const GetEntertained = () => {
                     handleSubcategoryClick(entertainmentItems[2].id)
                   }
                   title={entertainmentItems[2].title}
-                  imageUrl={entertainmentItems[2].imageUrl}
+                  imageUrl={entertainmentItems[2].images[0]?.path || ""}
                 />
               </div>
             </div>
@@ -110,7 +110,7 @@ const GetEntertained = () => {
               <GetEntertainedCard
                 onClick={() => handleSubcategoryClick(entertainmentItems[1].id)}
                 title={entertainmentItems[1].title}
-                imageUrl={entertainmentItems[1].imageUrl}
+                imageUrl={entertainmentItems[1].images[0]?.path || ""}
               />
             </div>
             <div className="flex flex-col gap-5">
@@ -120,7 +120,7 @@ const GetEntertained = () => {
                     handleSubcategoryClick(entertainmentItems[0].id)
                   }
                   title={entertainmentItems[0].title}
-                  imageUrl={entertainmentItems[0].imageUrl}
+                  imageUrl={entertainmentItems[0].images[0]?.path || ""}
                 />
               </div>
             </div>
@@ -136,7 +136,7 @@ const GetEntertained = () => {
                     handleSubcategoryClick(entertainmentItems[2].id)
                   }
                   title={entertainmentItems[2].title}
-                  imageUrl={entertainmentItems[2].imageUrl}
+                  imageUrl={entertainmentItems[2].images[0]?.path || ""}
                 />
               </div>
               <div className="h-[300px]">
@@ -145,7 +145,7 @@ const GetEntertained = () => {
                     handleSubcategoryClick(entertainmentItems[1].id)
                   }
                   title={entertainmentItems[1].title}
-                  imageUrl={entertainmentItems[1].imageUrl}
+                  imageUrl={entertainmentItems[1].images[0]?.path || ""}
                 />
               </div>
             </div>
@@ -153,7 +153,7 @@ const GetEntertained = () => {
               <GetEntertainedCard
                 onClick={() => handleSubcategoryClick(entertainmentItems[0].id)}
                 title={entertainmentItems[0].title}
-                imageUrl={entertainmentItems[0].imageUrl}
+                imageUrl={entertainmentItems[0].images[0]?.path || ""}
               />
             </div>
           </div>
@@ -168,7 +168,7 @@ const GetEntertained = () => {
                     handleSubcategoryClick(entertainmentItems[1].id)
                   }
                   title={entertainmentItems[1].title}
-                  imageUrl={entertainmentItems[1].imageUrl}
+                  imageUrl={entertainmentItems[1].images[0]?.path || ""}
                 />
               </div>
               <div className="h-[300px]">
@@ -177,7 +177,7 @@ const GetEntertained = () => {
                     handleSubcategoryClick(entertainmentItems[0].id)
                   }
                   title={entertainmentItems[0].title}
-                  imageUrl={entertainmentItems[0].imageUrl}
+                  imageUrl={entertainmentItems[0].images[0]?.path || ""}
                 />
               </div>
             </div>
@@ -190,7 +190,7 @@ const GetEntertained = () => {
               <GetEntertainedCard
                 onClick={() => handleSubcategoryClick(entertainmentItems[0].id)}
                 title={entertainmentItems[0].title}
-                imageUrl={entertainmentItems[0].imageUrl}
+                imageUrl={entertainmentItems[0].images[0]?.path || ""}
               />
             </div>
           </div>

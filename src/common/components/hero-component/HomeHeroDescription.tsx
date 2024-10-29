@@ -1,4 +1,5 @@
 import useFetchDashboardStats from "../../../hooks/use-fetch-dashboard-stat";
+import { homePageDescription, homePageDescriptionTitle } from "../../app-strings";
 import SearchBar from "../search-bar/SearchBar";
 
 const HomeHeroDescription = () => {
@@ -22,11 +23,10 @@ const HomeHeroDescription = () => {
       <div className="h-[300px] bg-primary rounded-tr-3xl flex items-center justify-center px-10 lg:px-20">
         <div className="text-light-grey font-raleway flex flex-col gap-3 text-center lg:text-left">
           <p className="font-Montserrat font-semibold text-3xl">
-            Stay Fit, Stay Entertained
+          {homePageDescriptionTitle}
           </p>
           <p className="text-xl font-raleway">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua.
+         {homePageDescription}
           </p>
         </div>
       </div>

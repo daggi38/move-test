@@ -1,13 +1,12 @@
 import { Link, useNavigate } from "react-router-dom";
-import FitnessCardio from "../../../../assets/images/fitness-cardio.jpg";
-import FitnessWeight from "../../../../assets/images/fitness-weight.jpg";
+
 import FitnessProgramCard from "../../../../common/components/cards/FitnessProgram";
 import useFetchFeaturedCollection from "../../../../hooks/use-fetch-featured-collection";
 import ShimmerIndicator from "../../../../common/components/shimmer-indicator/ShimmerIndicator";
 import useFetchFitnessSubCategories from "../../../../hooks/use-fetch-fitness-subcategory";
 
 const FitnessProgram = () => {
-  const { fitnessFeature, isDataFetched } = useFetchFeaturedCollection();
+  const { fitnessFeature, } = useFetchFeaturedCollection();
   const navigate = useNavigate();
 
   const categoryId = fitnessFeature?.category?.[0]?.id || "";
@@ -42,16 +41,14 @@ const FitnessProgram = () => {
             <ShimmerIndicator count={2} height={300} width={300} />
           ) : (
             <div className="flex flex-col xl:flex-row gap-5 md:gap-10">
-              <img
-                src={FitnessWeight}
-                alt="Fitness Weight"
-                className="w-full md:w-[300px] h-[200px] md:h-[250px] rounded-3xl"
-              />
-              <img
-                src={FitnessCardio}
-                alt="Fitness Cardio"
-                className="w-full md:w-[300px] h-[200px] md:h-[250px] rounded-3xl"
-              />
+              {fitnessFeature.images.map((image, index) => (
+                <img
+                  key={index}
+                  src={image.path}
+                  alt={`Fitness Image ${index + 1}`}
+                  className="w-full md:w-[300px] h-[200px] md:h-[250px] rounded-3xl"
+                />
+              ))}
             </div>
           )}
         </div>
@@ -74,7 +71,7 @@ const FitnessProgram = () => {
                     handleSubcategoryClick(subCategory.id);
                   }}
                   key={subCategory.id}
-                  description={subCategory.description}
+                  description={subCategory.short_desc}
                   title={subCategory.title}
                 />
               ))}

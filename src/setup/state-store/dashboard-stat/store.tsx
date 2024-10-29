@@ -1,5 +1,4 @@
 import { create } from "zustand";
-import { FeaturedCollection } from "../../../models/featured-collection/featured-collection";
 import { DashboardStats } from "../../../models/dashboard-stats/dashboard-stats";
 
 type DashboardStat = {

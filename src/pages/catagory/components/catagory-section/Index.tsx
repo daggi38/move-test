@@ -5,7 +5,6 @@ import {
   Categories,
   SubCategory,
 } from "../../../../models/categories/categories";
-import HeroImage from "../../../../assets/images/hero-image.jpg";
 import ShimmerIndicator from "../../../../common/components/shimmer-indicator/ShimmerIndicator";
 import ReactPaginate from "react-paginate";
 
@@ -44,14 +43,14 @@ const CategorySection: React.FC<CategoryProps> = ({
     <SubcategoryCard
       key={subCategories.id}
       title={subCategories.title}
-      description={subCategories.description}
-      image={HeroImage}
+      description={subCategories.short_desc}
+      image={subCategories.images[0]?.path || ""}
       onClick={() => handleSubcategoryClick(subCategories.id)}
     />
   ));
 
   return (
-    <div className="min-h-screen flex flex-col p-4 sm:p-8 md:p-12 lg:p-20">
+    <div className=" flex flex-col p-4 sm:p-8 md:p-12 lg:p-20">
       <h2 className="text-light-yellow text-3xl sm:text-4xl md:text-5xl font-light font-Montserrat mb-6 sm:mb-8 md:mb-10">
         {category.title}
       </h2>

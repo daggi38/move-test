@@ -1,4 +1,4 @@
-import Footer from "../../common/components/footer/Footer";
+
 import Header from "../../common/components/header/Header";
 import HeroComponent from "../../common/components/hero-component/HeroComponent";
 import BackgroundImage from "../../assets/images/hero-image.jpg";

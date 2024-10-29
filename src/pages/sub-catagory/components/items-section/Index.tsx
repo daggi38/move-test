@@ -59,7 +59,7 @@ const ItemsSection: React.FC<SeriesSectionProps> = ({
       key={series.id}
       title={series.title}
       description={series.description}
-      image={""}
+      image={series.images[0]?.path || ""}
       onClick={() => handleCardClick(series.id)}
     />
   ));

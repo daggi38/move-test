@@ -5,7 +5,7 @@ import { useEmailSubscriptionStore } from "../setup/state-store/email-subscripti
 const useEmailSubscriptionEffect = () => {
   const navigate = useNavigate();
 
-  const { isSuccess, errorMessage, setErrorMessage, setSuccess, isLoading } =
+  const { isSuccess, errorMessage,  setSuccess, isLoading } =
     useEmailSubscriptionStore();
 
   useEffect(() => {

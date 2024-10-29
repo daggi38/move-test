@@ -2,7 +2,6 @@ import { instanceWithOutCredential } from "../setup/axios-setup/endpoint-setup";
 import { useEffect } from "react";
 
 import { getCategoriesEndpoint } from "../setup/axios-setup/endpoints";
-import { useFitnessSubcategoryStore } from "../setup/state-store/sub-category/fitness-sub-category";
 import { useentertainmentSubcategoryStore } from "../setup/state-store/sub-category/entertainment-sub-categories.";
 
 const useFetchEntertainmentSubCategories = (id: string) => {
@@ -29,6 +28,8 @@ const useFetchEntertainmentSubCategories = (id: string) => {
       );
 
       setSubCategoriesAfterFetch(response.data.sub_categories);
+
+
     } catch (error) {
       console.error("Error fetching category:", error);
     } finally {
