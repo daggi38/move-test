@@ -4,8 +4,8 @@ import axios from "axios";
 `baseUrl` and assigning it the value of the base URL for the local API, which is
 "http://localhost:8000/". This variable can be exported and used in other parts of the code to
 construct full API endpoints by appending specific paths to it. */
-export const baseUrl = "http://localhost:8000/api";
-//export const baseUrl = "https://admasbe.vpsolutions.et/api/";
+//export const baseUrl = "http://localhost:8000/api";
+export const baseUrl = "https://api.moveit.vpsolutions.et/api";
 
 /* The code snippet `export const instance = axios.create({
   baseURL: "http://localhost:8000/api/",

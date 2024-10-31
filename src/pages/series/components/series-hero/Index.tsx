@@ -1,6 +1,5 @@
 import React from "react";
 import HeroComponent from "../../../../common/components/hero-component/HeroComponent";
-import TradeMill from "../../../../assets/images/fitness-cardio.jpg";
 import { Series } from "../../../../models/categories/categories";
 
 interface SeriesProps {
@@ -14,8 +13,8 @@ const SeriesHero: React.FC<SeriesProps> = ({ series, isLoading }) => {
       isLoading={isLoading}
       title={series.title}
       description={series.description}
-      imagePath={TradeMill}
-      isHomePage={false}
+      imagePath={series.images[0]?.path || ""}
+      isHomePage={true}
     />
   );
 };
