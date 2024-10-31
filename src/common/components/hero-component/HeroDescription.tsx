@@ -18,7 +18,7 @@ const HeroDescription: React.FC<HeroDescriptionProps> = ({
   isCategoryPage = false,
 }) => {
   return (
-    <div className="relative flex flex-col lg:grid xl:grid-cols-[2fr_1fr_2fr] -mt-16">
+    <div className="relative flex flex-col lg:grid xl:grid-cols-[2fr_1.5fr_2fr] -mt-16">
       <div className="xl:hidden w-full px-5 mb-4  flex items-center justify-center">
         <div className=" w-full md:w-1/2">
           <SearchBar />

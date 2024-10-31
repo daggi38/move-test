@@ -10,6 +10,7 @@ const Category = () => {
   const { id } = useParams<{ id?: string }>();
 
   const { category, subCategory, isBusy } = useFetchSingleCategories(id || "");
+  
 
   return (
     <div className="relative bg-gradient-to-r from-primary to-primary-light min-h-screen min-w-screen max-w-screen">

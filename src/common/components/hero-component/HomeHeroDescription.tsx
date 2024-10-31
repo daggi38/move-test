@@ -1,5 +1,8 @@
 import useFetchDashboardStats from "../../../hooks/use-fetch-dashboard-stat";
-import { homePageDescription, homePageDescriptionTitle } from "../../app-strings";
+import {
+  homePageDescription,
+  homePageDescriptionTitle,
+} from "../../app-strings";
 import SearchBar from "../search-bar/SearchBar";
 
 const HomeHeroDescription = () => {
@@ -13,7 +16,9 @@ const HomeHeroDescription = () => {
   ));
 
   return (
-    <div className="relative grid grid-cols-1 xl:grid-cols-[2fr_1fr_2fr] -mt-16">
+    <div
+      className="relative grid grid-cols-1 xl:grid-cols-[2fr_1.5fr_2fr] -mt-16"
+    >
       <div className="xl:hidden w-full px-5 mb-4 flex items-center justify-center">
         <div className="w-full md:w-1/2">
           <SearchBar />
@@ -23,11 +28,9 @@ const HomeHeroDescription = () => {
       <div className="h-[300px] bg-primary rounded-tr-3xl flex items-center justify-center px-10 lg:px-20">
         <div className="text-light-grey font-raleway flex flex-col gap-3 text-center lg:text-left">
           <p className="font-Montserrat font-semibold text-3xl">
-          {homePageDescriptionTitle}
+            {homePageDescriptionTitle}
           </p>
-          <p className="text-xl font-raleway">
-         {homePageDescription}
-          </p>
+          <p className="text-xl font-raleway">{homePageDescription}</p>
         </div>
       </div>
 

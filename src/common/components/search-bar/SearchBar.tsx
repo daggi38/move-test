@@ -21,7 +21,7 @@ const SearchBar: React.FC = () => {
       <input
         type="text"
         placeholder="What are you looking for?"
-        className="bg-transparent placeholder:text-light-yellow text-light-grey placeholder:font-raleway font-light w-full ml-4 placeholder:text-sm  outline-none"
+        className="bg-transparent placeholder:text-light-yellow text-light-grey placeholder:font-raleway font-light w-full ml-4 placeholder:text-base placeholder:text-center  outline-none"
         {...register("title", { required: true })} 
       />
       <button
