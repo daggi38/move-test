@@ -1,5 +1,5 @@
 import React from "react";
-import {  useNavigate } from "react-router-dom"; 
+import { useNavigate } from "react-router-dom";
 import ShimmerIndicator from "../shimmer-indicator/ShimmerIndicator";
 
 interface HeroComponentProps {
@@ -9,7 +9,7 @@ interface HeroComponentProps {
   isThankyouPage?: boolean;
   isHomePage?: boolean;
   isLoading: boolean;
-  isFullscreen?:boolean;
+  isFullscreen?: boolean;
 }
 
 const HeroComponent: React.FC<HeroComponentProps> = ({
@@ -25,7 +25,7 @@ const HeroComponent: React.FC<HeroComponentProps> = ({
   const navigate = useNavigate();
 
   const handleBackNavigation = () => {
-    navigate(-1);
+    navigate("/");
   };
 
   return (
