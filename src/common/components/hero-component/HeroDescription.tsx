@@ -48,9 +48,11 @@ const HeroDescription: React.FC<HeroDescriptionProps> = ({
       <div className="bg-primary rounded-none md:rounded-tl-3xl flex items-center justify-center py-10">
         <div className="text-light-grey font-raleway flex flex-row gap-5 md:gap-10 text-xl md:text-2xl font-light">
           <div>
-            <p className="text-sm md:text-base px-5 sm:px-10 md:px-20 text-center">
-              {descriptionOne}
-            </p>
+            <p
+              className="text-sm md:text-base px-5 sm:px-10 md:px-20 text-center"
+              dangerouslySetInnerHTML={{ __html: descriptionOne }}
+            ></p>
+
             {descriptionTwo && (
               <p className="text-sm md:text-base px-5 sm:px-10 md:px-20 py-3 md:py-5">
                 {descriptionTwo}

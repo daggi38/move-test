@@ -48,15 +48,16 @@ const VideoCard: React.FC<VideoCardProps> = ({
           </div>
         ) : (
           <div className="absolute inset-0 flex items-center justify-center">
-            <div className="bg-black rounded-full flex items-center justify-center"> 
-            <FiPlay className="text-white text-5xl  p-3" fill="white" /></div>
+            <div className="bg-black rounded-full flex items-center justify-center">
+              <FiPlay className="text-white text-5xl  p-3" fill="white" />
+            </div>
           </div>
         )}
       </div>
 
       <div className="p-4 sm:p-5">
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-2">
-          <p className="text-light-yellow font-Montserrat font-light text-xl sm:text-2xl truncate">
+          <p className="text-light-yellow font-Montserrat font-light text-xl sm:text-2xl ">
             {title}
           </p>
           <div className="flex flex-col md:flex-row gap-1 md:gap-4 text-light-grey font-raleway text-sm sm:text-base font-light">
@@ -70,9 +71,10 @@ const VideoCard: React.FC<VideoCardProps> = ({
             </p>
           </div>
         </div>
-        <p className="font-light text-sm sm:text-base text-light-grey mt-2 line-clamp-2">
-          {description}
-        </p>
+        <p
+          className="font-light text-sm sm:text-base text-light-grey mt-2 line-clamp-2"
+          dangerouslySetInnerHTML={{ __html: description }}
+        ></p>
         <div className="flex items-end justify-end mt-4">
           <FiShare2
             className="text-white cursor-pointer"

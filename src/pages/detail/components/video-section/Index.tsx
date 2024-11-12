@@ -17,7 +17,7 @@ const VideoSection: React.FC<EpisodeProps> = ({ episode }) => {
   );
 
   return (
-    <div className="h-auto xl:h-[80vh] px-5 md:px-20 mt-10">
+    <div className="h-auto  px-5 md:px-20 mt-10">
       <div className="h-[50vh]">
         {isBusy ? (
           <div className="flex items-center justify-center">
@@ -55,12 +55,13 @@ const VideoSection: React.FC<EpisodeProps> = ({ episode }) => {
           </div>
         ) : (
           <>
-            <p className="font-Montserrat text-3xl xl md:text-6xl mt-3 text-light-yellow">
+            <p className="font-Montserrat text-3xl xl md:text-6xl mt-14 text-light-yellow">
               {episode.title}
             </p>
-            <p className="text-base py-5 text-light-grey w-full md:w-1/2">
-              {episode.description}
-            </p>
+            <p
+              className="text-base py-5 text-light-grey w-full md:w-1/2"
+              dangerouslySetInnerHTML={{ __html: episode.description }}
+            ></p>
           </>
         )}
       </div>

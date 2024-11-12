@@ -9,7 +9,7 @@ import useFetchSingleSeries from "../../hooks/use-fetch-single-series";
 const Series = () => {
   const { id } = useParams<{ id?: string }>();
 
-  const { isBusy, series} = useFetchSingleSeries(id || "");
+  const { isBusy, series } = useFetchSingleSeries(id || "");
 
   return (
     <div className="relative bg-gradient-to-r from-primary to-primary-light min-h-screen min-w-screen max-w-screen">

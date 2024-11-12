@@ -12,7 +12,7 @@ const SeriesHero: React.FC<SeriesProps> = ({ series, isLoading }) => {
     <HeroComponent
       isLoading={isLoading}
       title={series.title}
-      description={series.description}
+      description={""}
       imagePath={series.images[0]?.path || ""}
       isHomePage={true}
     />

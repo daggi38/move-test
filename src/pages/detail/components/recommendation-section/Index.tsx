@@ -11,10 +11,7 @@ interface EpisodeProps {
   isLoading: boolean;
 }
 
-const RecommendationSection: React.FC<EpisodeProps> = ({
-  episode,
- 
-}) => {
+const RecommendationSection: React.FC<EpisodeProps> = ({ episode }) => {
   const { videoList, hasVideos, isBusy } = useFetchVideos(episode.series_id);
   const { id } = useParams<{ id?: string }>();
   const navigate = useNavigate();
@@ -54,7 +51,7 @@ const RecommendationSection: React.FC<EpisodeProps> = ({
   ));
 
   return (
-    <div className="px-5 md:px-20">
+    <div className="px-5 md:px-20 mt-16">
       <p className="font-Montserrat text-3xl md:text-6xl text-light-yellow pb-10">
         {"Episodes"}
       </p>
