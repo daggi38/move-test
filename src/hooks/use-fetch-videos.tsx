@@ -8,7 +8,7 @@ import { useVideoStore } from "../setup/state-store/videos/store";
 
 const useFetchVideos = (id: string) => {
   const {
-    isBusy,
+    isLoading,
     isDataFetched,
     setIsBusy,
     setVideoListAfterFetch,
@@ -16,7 +16,7 @@ const useFetchVideos = (id: string) => {
   } = useVideoStore();
 
 
-  const hasVideos = videoList.length > 0;
+  
 
   useEffect(() => {
     if (id) {
@@ -38,8 +38,10 @@ const useFetchVideos = (id: string) => {
       setIsBusy(false);
     }
   }
+  const hasVideos = Array.isArray(videoList) && videoList.length > 0;
 
-  return { isBusy, videoList, isDataFetched, hasVideos };
+
+  return { isLoading, videoList, isDataFetched, hasVideos };
 };
 
 export default useFetchVideos;

@@ -11,7 +11,7 @@ import useFetchSingleSubCategories from "../../hooks/use-fetch-single-sub-catego
 const Subcategory = () => {
   const { id } = useParams<{ id?: string }>();
 
-  const { subCategory, series, isBusy, isDataFetched, tagItems } =
+  const { subCategory, series, isBusy, isDataFetched, tagItems, hasSeries } =
     useFetchSingleSubCategories(id || "");
 
   const isLoading = !isDataFetched || !series;
@@ -21,7 +21,16 @@ const Subcategory = () => {
       <Header />
       <SubCategoryHero subCategory={subCategory} isLoading={isBusy} />
       <SubCategoryDescription subCategory={subCategory} />
-      <ItemsSection series={series} isLoading={isLoading} tagItems={tagItems} />
+
+      {hasSeries ? (
+        <ItemsSection
+          series={series}
+        isLoading={isLoading}
+          tagItems={tagItems}
+        />
+      ) : (
+        <div className="h-20 w-full"></div>
+      )}
       <Footer />
     </div>
   );

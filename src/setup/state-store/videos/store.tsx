@@ -3,7 +3,7 @@ import { VideoModel } from "../../../models/video/video";
 
 type VideoStore = {
   videoList: VideoModel[];
-  isBusy: boolean;
+  isLoading: boolean;
   isDataFetched: boolean;
   setVideoListAfterFetch: (data: VideoModel[]) => void;
   setIsBusy: (busy: boolean) => void;
@@ -12,11 +12,11 @@ type VideoStore = {
 export const useVideoStore = create<VideoStore>((set) => ({
   videoList: [],
 
-  isBusy: false,
+  isLoading: false,
   isDataFetched: false,
 
   setIsBusy: (busy: boolean) => {
-    set(() => ({ isBusy: busy }));
+    set(() => ({ isLoading: busy }));
   },
 
   setVideoListAfterFetch: (data: VideoModel[]) => {

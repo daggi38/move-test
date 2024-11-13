@@ -24,7 +24,7 @@ const VideoCard: React.FC<VideoCardProps> = ({
       navigator
         .share({
           title: title,
-          text: description,
+
           url: window.location.href,
         })
         .then(() => console.log("Video shared successfully!"))

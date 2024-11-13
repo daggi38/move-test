@@ -40,8 +40,9 @@ const useFetchSubCategories = (id: string) => {
       setIsBusy(false);
     }
   }
+  const hasSeries = Array.isArray(series) && series.length > 0;
 
-  return { isBusy, subCategory ,series ,isDataFetched,tagItems};
+  return { isBusy, subCategory ,series ,isDataFetched,tagItems ,hasSeries};
 };
 
 export default useFetchSubCategories;
