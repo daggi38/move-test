@@ -9,7 +9,9 @@ import GetEntertained from "./components/get-entertained/Index";
 import LandingHero from "./components/landing-hero/Index";
 
 const Main = () => {
-  const { hasFeaturedCollection } = useFetchFeaturedCollection();
+  const { hasFeaturedCollection, fitnessFeature, entertainmentFeature } =
+    useFetchFeaturedCollection();
+  console.log(fitnessFeature);
 
   return (
     <div className="relative bg-gradient-to-r from-primary to-primary-light min-h-screen min-w-screen max-w-screen">
@@ -19,9 +21,9 @@ const Main = () => {
       <HomeHeroDescription />
       <About />
 
-      {hasFeaturedCollection && <FitnessProgram />}
+      {hasFeaturedCollection && fitnessFeature?.id &&  <FitnessProgram />}
 
-      {hasFeaturedCollection && <GetEntertained />}
+      {hasFeaturedCollection && entertainmentFeature?.id && <GetEntertained />}
 
       <Footer />
     </div>

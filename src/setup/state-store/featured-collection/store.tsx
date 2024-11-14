@@ -20,7 +20,7 @@ export const useFeaturedCollectionStore = create<FeaturedCollectionStore>(
       description: "",
       position: "",
       category: [],
-      images: []
+      images: [],
     },
     entertainmentFeature: {
       id: "",
@@ -28,7 +28,7 @@ export const useFeaturedCollectionStore = create<FeaturedCollectionStore>(
       description: "",
       position: "",
       category: [],
-      images: []
+      images: [],
     },
 
     isBusy: false,
@@ -39,27 +39,26 @@ export const useFeaturedCollectionStore = create<FeaturedCollectionStore>(
     },
 
     setFeaturedCollection: (data: FeaturedCollection[]) => {
-      const fitnessFeature = data.find(
-        (item) => item.title === "Fitness Program"
+      const fitnessFeature = data.find((item) =>
+        item.title.toLowerCase().includes("fitness")
       ) || {
         id: "",
         title: "",
         description: "",
         position: "",
         category: [],
-        images:[],
-
+        images: [],
       };
 
-      const entertainmentFeature = data.find(
-        (item) => item.title === "Get Entertained"
+      const entertainmentFeature = data.find((item) =>
+        item.title.toLowerCase().includes("entertainment")
       ) || {
         id: "",
         title: "",
         description: "",
         position: "",
         category: [],
-        images:[],
+        images: [],
       };
 
       set(() => ({

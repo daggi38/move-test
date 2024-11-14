@@ -6,7 +6,8 @@ import ShimmerIndicator from "../../../../common/components/shimmer-indicator/Sh
 
 const GetEntertained = () => {
   const navigate = useNavigate();
-  const { entertainmentFeature } = useFetchFeaturedCollection();
+  const { entertainmentFeature, isBusy: isLoading } =
+    useFetchFeaturedCollection();
   const categoryId = entertainmentFeature?.category?.[0]?.id || "";
   const { entertainmentSubCategory, isBusy } =
     useFetchEntertainmentSubCategories(categoryId);
@@ -16,6 +17,9 @@ const GetEntertained = () => {
   const handleSubcategoryClick = (id: string) => {
     navigate(`/subcategory/${id}`);
   };
+
+
+  console.log(entertainmentFeature)
 
   const renderCards = () => {
     if (isBusy) {
@@ -28,6 +32,10 @@ const GetEntertained = () => {
           <ShimmerIndicator count={1} height={605} width={300} />
         </div>
       );
+    }
+
+    if (!entertainmentItems || entertainmentItems.length === 0) {
+      return null;
     }
 
     switch (entertainmentItems.length) {
@@ -203,7 +211,7 @@ const GetEntertained = () => {
   return (
     <div className="md:p-20 p-5">
       <div className="flex flex-col md:flex-row justify-between items-center">
-        {isBusy ? (
+        {isLoading ? (
           <div>
             <ShimmerIndicator count={1} height={100} width={400} />
           </div>
@@ -212,25 +220,25 @@ const GetEntertained = () => {
             <p className="font-Montserrat text-4xl md:text-6xl text-light-yellow">
               {entertainmentFeature.title}
             </p>
-            <p className="mt-2 font-raleway text-lg md:text-2xl text-light-grey">
-              {entertainmentFeature.description}
-            </p>
+            <p
+              className="mt-2 font-raleway text-lg md:text-2xl text-light-grey"
+              dangerouslySetInnerHTML={{
+                __html: entertainmentFeature.description,
+              }}
+            ></p>
           </div>
         )}
 
-        {isBusy ? (
-          <p className="text-light-yellow font-raleway text-lg md:text-xl text-center font-light pb-10">
-            View all entertainments
-          </p>
-        ) : (
-          <Link
-            key={entertainmentFeature.category[0].id}
-            to={`/category/${entertainmentFeature.category[0].id}`}
-          >
+        {categoryId ? (
+          <Link to={`/category/${categoryId}`}>
             <p className="text-light-yellow font-raleway text-lg md:text-xl text-center font-light pb-10">
               View all entertainments
             </p>
           </Link>
+        ) : (
+          <p className="text-light-yellow font-raleway text-lg md:text-xl text-center font-light pb-10">
+            View all entertainments
+          </p>
         )}
       </div>
       {renderCards()}
