@@ -12,7 +12,7 @@ interface EpisodeProps {
 }
 
 const RecommendationSection: React.FC<EpisodeProps> = ({ episode }) => {
-  const { videoList, hasVideos, isBusy } = useFetchVideos(episode.series_id);
+  const { videoList, hasVideos, isLoading } = useFetchVideos(episode.series_id);
   const { id } = useParams<{ id?: string }>();
   const navigate = useNavigate();
 
@@ -56,7 +56,7 @@ const RecommendationSection: React.FC<EpisodeProps> = ({ episode }) => {
         {"Episodes"}
       </p>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-4 sm:gap-6 md:gap-8 mb-10">
-        {isBusy ? (
+        {isLoading ? (
           <>
             <ShimmerIndicator count={1} height={400} width={400} />
             <ShimmerIndicator count={1} height={400} width={400} />
